@@ -14,7 +14,7 @@ var data = {
       "caption": "Sign in page",
       "imgref": "images/agents/4-platform-signin.png"
     },{
-      "caption": "T&Cs for agent services",
+      "caption": "T&Cs",
       "imgref": "images/agents/5-terms-conditions.png"
     },{
       "caption": "The unverified client list",
@@ -38,7 +38,7 @@ var data = {
       "caption": "The PAYE for enployers L&P account",
       "imgref": "images/agents/12-paye-collapsed.png"
     },{
-      "caption": "Expanded payments and statements view",
+      "caption": "Expanded payments and statement view",
       "imgref": "images/agents/13-paye-open.png"
     }]
   }]
