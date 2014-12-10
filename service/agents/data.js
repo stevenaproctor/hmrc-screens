@@ -5,7 +5,7 @@ var data = {
   {
     "title": "Private Beta (14 November 2014)",
     "path": [{
-      "caption": "Agents' email invitation",
+      "caption": "Email invitation",
       "imgref": "images/agents/1-email-invite.png"
     },{
       "caption": "Welcome page describing the service",
@@ -35,7 +35,7 @@ var data = {
       "caption": "The verfifed client list",
       "imgref": "images/agents/11-comfirmed-client-list.png"
     },{
-      "caption": "The employeers' PAYE account",
+      "caption": "The PAYE for enployers L&P account",
       "imgref": "images/agents/12-paye-collapsed.png"
     },{
       "caption": "Expanded payments and statements view",
