@@ -9,10 +9,7 @@ var data = {
       "imgref": "images/agents/1-email-invite.png"
     },{
       "caption": "Welcome page describing the service",
-      "imgref": "images/agents/2-welcome-collapsed.png"
-    },{
-      "caption": "Step by step verifying guide",
-      "imgref": "images/agents/3-welcome-page-open.png"
+      "imgref": "images/agents/3-welcome-page.png"
     },{
       "caption": "Sign in page",
       "imgref": "images/agents/4-platform-signin.png"
@@ -41,7 +38,7 @@ var data = {
       "caption": "The employeers' PAYE account",
       "imgref": "images/agents/12-paye-collapsed.png"
     },{
-      "caption": "The three levels of the PAYE account",
+      "caption": "Expanded payments and statements view",
       "imgref": "images/agents/13-paye-open.png"
     }]
   }]
