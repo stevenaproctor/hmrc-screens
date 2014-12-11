@@ -22,7 +22,7 @@ var data = {
     },{
       "caption": "Searching for a client",
       "imgref": "images/agents/7-client-list-search.png"
-    },{     
+    },{
       "caption": "Verified clients are moved into the client list",
       "imgref": "images/agents/8-client-list-verify.png"
     },{
@@ -32,7 +32,7 @@ var data = {
       "caption": "The client has been deleted",
       "imgref": "images/agents/10-client-list-delete.png"
     },{
-      "caption": "The verfifed client list",
+      "caption": "The verified client list",
       "imgref": "images/agents/11-comfirmed-client-list.png"
     },{
       "caption": "The PAYE for enployers L&P account",
