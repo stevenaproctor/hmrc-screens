@@ -53,6 +53,11 @@ var data = {
       "caption": "Expanded payments and statement view",
       "imgref": "images/agents/13-paye-open.png",
       "notes": "These headline views can be expanded to show each payment or accounting period in more detail."
+    },{
+      "caption": "Your feedback",
+      "notes": "Please complete a short survey to help us improve the service. <br><br> Your views are anonymous and will be kept confidential.<br><br> <a href='https://www.surveymonkey.com/s/AOSS_PAYE_Prototype_Feedback'>Take the survey</a>",
+      "class": "last",
+      "imgref": "images/agents/14-thankyou.png",
     }]
   }]
 }

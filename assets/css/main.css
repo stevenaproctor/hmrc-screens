@@ -376,3 +376,6 @@ html.noscroll {
 .prev.button{
 	display: none;
 }
+.last .next.button{
+	display:none;
+}
