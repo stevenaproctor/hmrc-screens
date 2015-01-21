@@ -24,7 +24,7 @@ var data = {
     },{
       "caption": "The unverified client list",
       "imgref": "images/agents/6-client-list.png",
-      "notes": "The left hand tab on this page presents the agent with a list of clients drawn from the current Government Gateway record. <br/><br/>The clients are presented as 'unverified' and the agent is asked either to confirm that they are still clients or to delete them from the list if they are no longer clients. <br/><br/>The page offers a drop-down feature with step-by-step guidance on how to verify clients. <br/><br/>Any missing clients will need to be added to the list using the Online Agent Authorisation service."
+      "notes": "The left hand tab on this page presents the agent with a list of clients drawn from the current Government Gateway record. <br/><br/>The clients are presented as 'unverified' and the agent is asked either to confirm that they are still clients or to delete them from the list if they are no longer clients. <br/><br/>The page offers a drop-down feature with step-by-step guidance on how to verify clients."
     },{
       "caption": "Searching for a client",
       "imgref": "images/agents/7-client-list-search.png",
@@ -36,7 +36,7 @@ var data = {
     },{
       "caption": "Delete confirmation page",
       "imgref": "images/agents/9-delete.png",
-      "notes": "After selecting a client and clicking the 'Delete client' button the agent will be asked to confirm that they want to remove the client from their client list.<br/><br/> This feature is provided because deleting a client cannot simply be undone. <br/><br/>If deleted in error the client would have to be added back onto to the client list using the Online Agent Authorisation service."
+      "notes": "After selecting a client and clicking the 'Delete client' button the agent will be asked to confirm that they want to remove the client from their client list.<br/><br/> This feature is provided because deleting a client cannot simply be undone."
     },{
       "caption": "The client has been deleted",
       "imgref": "images/agents/10-client-list-delete.png",
