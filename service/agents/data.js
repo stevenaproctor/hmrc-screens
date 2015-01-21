@@ -1,6 +1,6 @@
 var data = {
   "service": "18. Agents online self-serve",
-  "last-updated": "14 November 2014",
+  "last-updated": "21 January 2015",
   "userjourneys": [
   {
     "title": "Private Beta (14 November 2014)",
