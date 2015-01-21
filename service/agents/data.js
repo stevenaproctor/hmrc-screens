@@ -3,7 +3,7 @@ var data = {
   "last-updated": "21 January 2015",
   "userjourneys": [
   {
-    "title": "Private Beta (14 November 2014)",
+    "title": "Private Beta (21 January 2015)",
     "path": [{
       "caption": "Email invitation",
       "imgref": "images/agents/1-email-invite.png",
