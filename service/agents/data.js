@@ -1,9 +1,9 @@
 var data = {
   "service": "18. Agents online self-serve",
-  "last-updated": "17 March 2015",
+  "last-updated": "17 July 2015",
   "userjourneys": [
   {
-    "title": "Private Beta (17 March 2015)",
+    "title": "Private Beta (17 July 2015)",
     "path": [{
       "caption": "Email invitation",
       "imgref": "images/agents/1-email-invite.png",
