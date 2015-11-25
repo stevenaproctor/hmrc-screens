@@ -18,7 +18,7 @@ var data = {
       "imgref": "images/agents/03-tnc.png",
       "notes": "Agents are asked to confirm that they understand the Data Protection rules on sharing and viewing customer data. <br/><br/>These rules apply to HMRC too. We cannot share customer data with an agent unless the customer has authorised the agent to see that data."
     },{
-      "caption": "Agent's dashboard",
+      "caption": "Agent's homepage",
       "imgref": "images/agents/04-dashboard.png",
       "notes": "The home page for Agents; where they can view their messages, get to any of the other taxes they are enrolled for, register a client for new taxes and get authorised by a client."
     },{
