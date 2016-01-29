@@ -7,8 +7,7 @@ var data = {
     "path": [{
       "caption": "Email invitation or blog",
       "imgref": "images/agents/01p-email.png",
-      "notes": "Agents receive an email inviting them to join the new service. The email contains a link to a page describing the service.<br/><br/>
-      The new service is also promoted via a blog, which contains the same link."
+      "notes": "Agents receive an email inviting them to join the new service. The email contains a link to a page describing the service.<br/><br/>The new service is also promoted via a blog, which contains the same link."
     },{
       "caption": "Promotion page",
       "imgref": "images/agents/02p-promo.png",
@@ -16,9 +15,7 @@ var data = {
     },{
       "caption": "Sign in page",
       "imgref": "images/agents/03p-login.png",
-      "notes": "Agents sign in with their Government Gateway account. 
-<br/><br/>
-Agents who don’t fulfil the eligibility criteria are given the option of joining the new service. Those who don’t are told why they can’t join and directed back to the existing HMRC online services."
+      "notes": "Agents sign in with their Government Gateway account.<br/><br/>Agents who don’t fulfil the eligibility criteria are given the option of joining the new service. Those who don’t are told why they can’t join and directed back to the existing HMRC online services."
     },{
       "caption": "Advert",
       "imgref": "images/agents/04p-advert.png",
