@@ -5,21 +5,28 @@ var data = {
   {
     "title": "Private Beta (9 November 2015)",
     "path": [{
-      "caption": "Email invitation",
-      "imgref": "images/agents/01-email-invite.png",
-      "notes": "The initial private beta service will be open to a limited number of users who have volunteered to help design and test the service.<br/><br/>HMRC will contact those volunteers before sending them this email. The link takes them to the new service."
-  
+      "caption": "Email invitation or blog",
+      "imgref": "images/agents/01p-email.png",
+      "notes": "Agents receive an email inviting them to join the new service. The email contains a link to a page describing the service.<br/><br/>The new service is also promoted via a blog, which contains the same link."
+    },{
+      "caption": "Promotion page",
+      "imgref": "images/agents/02p-promo.png",
+      "notes": "Agents are told the eligibility criteria for who can join the new service. Clicking the link takes them to the Government Gateway sign in page."
     },{
       "caption": "Sign in page",
-      "imgref": "images/agents/02-login.png",
-      "notes": "Agents are asked to sign in with their Government Gateway credentials. <br/><br/>This allows HMRC to check that only those agents on the volunteers list are able to use the service."
+      "imgref": "images/agents/03p-login.png",
+      "notes": "Agents sign in with their Government Gateway account.<br/><br/>Agents who don’t fulfil the eligibility criteria are given the option of joining the new service. Those who don’t are told why they can’t join and directed back to the existing HMRC online services."
     },{
-      "caption": "T&Cs",
-      "imgref": "images/agents/03-tnc.png",
-      "notes": "Agents are asked to confirm that they understand the Data Protection rules on sharing and viewing customer data. <br/><br/>These rules apply to HMRC too. We cannot share customer data with an agent unless the customer has authorised the agent to see that data."
+      "caption": "Advert",
+      "imgref": "images/agents/04p-advert.png",
+      "notes": "Agents are given the option of joining the new service or continuing with their existing HMRC online services."
+    },{
+      "caption": "Advert - yes selected",
+      "imgref": "images/agents/04p-advert2.png",
+      "notes": "Agents are advised to bookmark the agent services homepage to use the service again."
     },{
       "caption": "Agent's homepage",
-      "imgref": "images/agents/04-dashboard.png",
+      "imgref": "images/agents/05p-dashboard.png",
       "notes": "The home page for Agents; where they can view their messages, get to any of the other taxes they are enrolled for, register a client for new taxes and get authorised by a client."
     },{
       "caption": "The unverified client list",
