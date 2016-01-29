@@ -8,7 +8,6 @@ var data = {
       "caption": "Email invitation",
       "imgref": "images/agents/01-email-invite.png",
       "notes": "The initial private beta service will be open to a limited number of users who have volunteered to help design and test the service.<br/><br/>HMRC will contact those volunteers before sending them this email. The link takes them to the new service."
-  
     },{
       "caption": "Sign in page",
       "imgref": "images/agents/02-login.png",
