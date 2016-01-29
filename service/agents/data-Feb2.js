@@ -6,24 +6,28 @@ var data = {
     "title": "Private Beta (2 February 2016)",
     "path": [{
       "caption": "Email or promotion on the web",
-      "imgref": "images/agents/01-email.png",
-      "notes": "Agents will either receive an email or they will see a blog post on the web, informing them of the new Agent's services."
+      "imgref": "images/agents/promo/01-email.png",
+      "notes": "Agents receive an email inviting them to join the new service. The email contains a link to a page describing the service."
     },{
       "caption": "Promotion landing page",
-      "imgref": "images/agents/02-promo.png",
-      "notes": "Agents are asked to sign in with their Government Gateway credentials. <br/><br/>This allows HMRC to check that only those agents on the volunteers list are able to use the service."
+      "imgref": "images/agents/promo/02-promo.png",
+      "notes": "Agents are told the eligibility criteria for who can join the new service. Clicking the link takes them to the Government Gateway sign in page."
     },{
       "caption": "Sign in page",
-      "imgref": "images/agents/02-login.png",
-      "notes": "Agents are asked to sign in with their Government Gateway credentials. <br/><br/>This allows HMRC to check that only those agents on the volunteers list are able to use the service."
+      "imgref": "images/agents/promo/03-login.png",
+      "notes": "Agents sign in with their Government Gateway account. 
+      <br/><br/>Agents who don’t fulfil the eligibility criteria are given the option of joining the new service. Those who don’t are told why they can’t join and directed back to the existing HMRC online services."
     },{
       "caption": "Opt in page",
-      "imgref": "images/agents/03-advert.png",
-      "notes": "A set number of places are offered to join the trial each day. Before this limit has been reached, elligible agents are shown this opt in page. It gives them the option to switch to the new service.<br/><br/>
-      Agents who don't meet the criteria or who login after the places have been given out for that day are shown a message to let them know why they are unable to join."
+      "imgref": "images/agents/promo/04-advert.png",
+      "notes": "Agents are given the option of joining the new service or continuing with their existing HMRC online services."
+      },{
+      "caption": "Opt in page - yes selected",
+      "imgref": "images/agents/promo/04-advert2.png",
+      "notes": "Agents are advised to bookmark the agent services homepage to use the service again."
     },{
       "caption": "Agent's homepage",
-      "imgref": "images/agents/04-dashboard.png",
+      "imgref": "images/agents/promo/05-dashboard.png",
       "notes": "The home page for Agents; where they can view their messages, get to any of the other taxes they are enrolled for, register a client for new taxes and get authorised by a client."
     },{
       "caption": "The unverified client list",
