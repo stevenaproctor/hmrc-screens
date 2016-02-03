@@ -1,53 +1,53 @@
 var data = {
   "service": "18. Agents online self-serve",
-  "last-updated": "9 November 2015",
+  "last-updated": "2 February 2016",
   "userjourneys": [
   {
-    "title": "Private Beta (9 November 2015)",
+    "title": "Private Beta (2 February 2016)",
     "path": [{
-      "caption": "Email invitation",
-      "imgref": "images/agents/01-email-invite.png",
-      "notes": "The initial private beta service will be open to a limited number of users who have volunteered to help design and test the service.<br/><br/>HMRC will contact those volunteers before sending them this email. The link takes them to the new service."
+      "caption": "Promotion via email or blog",
+      "imgref": "images/agents/01p-email.png",
+      "notes": "Agents receive an email inviting them to join the new service. The email contains a link to a page describing the service.<br/><br/>The new service is also promoted via a blog, which contains the same link."
+    },{
+      "caption": "Promotional page",
+      "imgref": "images/agents/02p-promo.png",
+      "notes": "Agents are told the eligibility criteria for who can join the new service. Clicking the link takes them to the Government Gateway sign in page."
     },{
       "caption": "Sign in page",
-      "imgref": "images/agents/02-login.png",
-      "notes": "Agents are asked to sign in with their Government Gateway credentials. <br/><br/>This allows HMRC to check that only those agents on the volunteers list are able to use the service."
+      "imgref": "images/agents/03p-login.png",
+      "notes": "Agents sign in with their Government Gateway account."
     },{
-      "caption": "T&Cs",
-      "imgref": "images/agents/03-tnc.png",
-      "notes": "Agents are asked to confirm that they understand the Data Protection rules on sharing and viewing customer data. <br/><br/>These rules apply to HMRC too. We cannot share customer data with an agent unless the customer has authorised the agent to see that data."
+      "caption": "Advert",
+      "imgref": "images/agents/04p-advert.png",
+      "notes": "Agents who fulfil the eligibility criteria are shown this page giving them the option of joining the new service or continuing with their existing HMRC online services.<br/><br/>Agents who don’t fulfil the criteria are told why they can’t join and directed back to the existing HMRC online services."
+    },{
+      "caption": "Advert: yes selected",
+      "imgref": "images/agents/04p-advert2.png",
+      "notes": "Agents who select 'Yes' are advised to bookmark the agent services homepage to use the service again."
     },{
       "caption": "Agent's homepage",
-      "imgref": "images/agents/04-dashboard.png",
-      "notes": "The home page for Agents; where they can view their messages, get to any of the other taxes they are enrolled for, register a client for new taxes and get authorised by a client."
+      "imgref": "images/agents/05p-dashboard.png",
+      "notes": "The home page enables agents to:<ul><li>view messages from HMRC</li><li>access tax regimes they’re enrolled for</li><li>register clients for new taxes</li><li>get authorised by a client</li></ul>"
     },{
-      "caption": "The unverified client list",
-      "imgref": "images/agents/05a-unverified-clients.png",
-      "notes": "The left hand tab on this page presents the agent with a list of clients drawn from the current Government Gateway record. <br/><br/>The clients are presented as 'unverified' and the agent is asked either to confirm that they are still clients or to delete them from the list if they are no longer clients."
+      "caption": "PAYE client list",
+      "imgref": "images/agents/06p-clientlist-unconfirmed.png",
+      "notes": "The list of clients is drawn from the current Government Gateway record. <br/><br/>Agents must confirm that they  still represent clients by clicking the confirm button.<br/><br/>Agents are encouraged to remove any clients they no longer represent."
     },{
-      "caption": "Searching for a client",
-      "imgref": "images/agents/05b-search-client-list.png",
-      "notes": "The search feature allows an agent to find a client by name rather than scrolling through the entire list.<br/><br/> Client names matching the search are displayed as the name is typed in."
+      "caption": "Confirming clients",
+      "imgref": "images/agents/07p-cl-1-confirmed.png",
+      "notes": "Once  the client is confirmed, the button is replaced with a 'Confirmed' message and the client name becomes a link."
     },{
-      "caption": "Select clients to verify or delete",
-      "imgref": "images/agents/06-tick.png",
-      "notes": "To verify or delete a client, the checkbox must be selected and then the user can click the verify or delete button above it."
+      "caption": "Remove confirmation page",
+      "imgref": "images/agents/10p-remove.png",
+      "notes": "To provide an extra level of surety and avoid accidental removals, agents must confirm that they want to remove clients."
     },{
-      "caption": "Verified clients are moved into the client list",
-      "imgref": "images/agents/07-verified.png",
-      "notes": "After selecting one or more clients and clicking the 'Verify client' button, verified clients are moved to the Client list on the right hand tab."
+      "caption": "Search for a client",
+      "imgref": "images/agents/09p-cl-search.png",
+      "notes": "Search box allows agents to find specific clients rather than scrolling through the entire list.<br/><br/>Client names matching the search begin to be displayed as the name is typed in."
     },{
-      "caption": "Delete confirmation page",
-      "imgref": "images/agents/08-delete.png",
-      "notes": "After selecting a client and clicking the 'Delete client' button the agent will be asked to confirm that they want to remove the client from their client list.<br/><br/> This feature is provided because deleting a client cannot simply be undone."
-    },{
-      "caption": "The client has been deleted",
-      "imgref": "images/agents/09-deleted.png",
-      "notes": "After confirming the deletion the client's name is removed from the list of clients awaiting verification."
-    },{
-      "caption": "The verified client list",
-      "imgref": "images/agents/10-verified.png",
-      "notes": "Verified clients appear in the client list on the right hand tab. Clicking the hyperlinked name will take the agent to the client's PAYE account data.<br/><br/> Where the client's name is not hyperlinked, the notes column explains that the agent is not sufficiently authorised to see that data e.g. because the authorisation is only for online filing."
+      "caption": "As more clients are confirmed",
+      "imgref": "images/agents/08p-cl-most-confirmed.png",
+      "notes": "Over time agents can easily identify clients that they haven't been active with."
     },{
       "caption": "The PAYE for employers L&P account",
       "imgref": "images/agents/11-paye-page.png",
