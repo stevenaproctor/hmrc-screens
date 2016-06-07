@@ -17,9 +17,9 @@ var data = {
         "imgref": "images/web-qa-2016-06-07/3-sign-in-page.png",
         "note": "Agents sign in with their Government Gateway account."
       },{
-        "caption": "Advert",
+        "caption": "Joining the new service",
         "imgref": "images/web-qa-2016-06-07/4-advert.png",
-        "note": "Agents who fulfil the criteria will be given the option to join the new service. <br /> Those who don't will be told why and taken to the existing service on the portal."
+        "note": "Agents are asked if they want to switch to the new service. If they select ‘no’ they are redirected to HMRC online portal services."
       },{
         "caption": "Advert: yes selected",
         "imgref": "images/web-qa-2016-06-07/5-advert-yes-selected.png",
@@ -27,7 +27,7 @@ var data = {
       },{
         "caption": "Agent's homepage",
         "imgref": "images/web-qa-2016-06-07/6-agents-homepage.png",
-        "note": "The agent's homepage allows them to view, access and manage: <ul><li>services</li><li>messages</li><li>client registrations</li><li>account settings</li></ul> <strong>note:</strong> Agents services on the MDTP <br />only supports PAYE viewing of Allocations and Payments."
+        "note": "The agent's homepage allows them to view, access and manage: <ul><li>services</li><li>messages</li><li>client registrations</li><li>account settings</li></ul> <strong>note:</strong> Agents services on the digital tax platform <br />only supports PAYE viewing of Allocations and Payments."
       },{
         "caption": "PAYE client list",
         "imgref": "images/web-qa-2016-06-07/7-PAYE-client-list.png",
