@@ -7,7 +7,7 @@ var data = {
       "path": [{
         "caption": "Advert to Switch",
         "imgref": "images/web-qa-2016-06-07/1-switch-advert.png",
-        "note": "Agents are shown an advert to switch."
+        "note": "Agents are shown an advert to switch to the new service."
       },{
         "caption": "Promotional page",
         "imgref": "images/web-qa-2016-06-07/2-promotional-page.png",
