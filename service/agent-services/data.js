@@ -45,7 +45,7 @@ var data = {
         "imgref": "images/web-qa-2016-06-07/10-client-search.png",
         "note": "Allows agents to search for a specific client."
       },{
-        "caption": "Client L&P account home",
+        "caption": "Client L&P statement",
         "imgref": "images/web-qa-2016-06-07/11-client-summary.png",
         "note": "Shows an overview of the client's payment history and each of their PAYE accounting periods."
       },{
