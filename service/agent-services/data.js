@@ -18,7 +18,7 @@ var data = {
         "note": "The agent's homepage allows them to view, access and manage: <ul><li>services</li><li>messages</li><li>client registrations</li><li>account settings</li></ul> <strong>note:</strong> Agents services on the digital tax platform <br />only supports PAYE viewing of Allocations and Payments."
       },{
         "caption": "Advert: yes selected",
-        "imgref": "images/web-qa-2016-06-07/advert-yes-selected.png",
+        "imgref": "images/web-qa-2016-06-07/switch-yes-selected.png",
         "note": "If agents choose to use the new service, they are told to make sure their client list is kept up to date to avoid Data Protection issues."
       },{
         "caption": "PAYE client list",
