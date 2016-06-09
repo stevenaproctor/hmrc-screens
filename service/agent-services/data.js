@@ -10,7 +10,7 @@ var data = {
         "note": "Agents sign in with their Government Gateway account."
       },{
         "caption": "Joining the new service",
-        "imgref": "images/web-qa-2016-06-07/advert.png",
+        "imgref": "images/web-qa-2016-06-07/joining-service.png",
         "note": "Agents are asked if they want to switch to the new service. If they select ‘no’ they are redirected to HMRC online portal services."
       },{
         "caption": "Agent's homepage",
