@@ -1,7 +1,7 @@
 HMRC screens
 ================
 
-Browse screenshots of HMRC services, organised by user scenario.
+Browse screenshots of Agent Services, organised by user scenario.
 
 [http://hmrc.github.io/hmrc-screens/](http://hmrc.github.io/hmrc-screens/)
 
