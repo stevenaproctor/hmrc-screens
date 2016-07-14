@@ -65,5 +65,28 @@ var data = {
         "imgref": "images/web-qa-2016-july/sign-out-survey.png",
         "note": "Asks agents for feedback on using the service."
       }]
-    }]
+    },{
+          "title": "Flags for penalties and notices (Dev environment - July 2016)",
+          "path": [{
+            "caption": "The Scenario",
+            "imgref": "images/dev-july-2016-penalties-interest/1604662658_ba1d5baaa4_o.jpg",
+            "note": "I'm Paul, the chief accountant for Chippy Minton, a large industrial carpentry firm. Chippy has recently lost a lot of money on an investment fund due to economic and political instability. It has left him struggling to effectively run his company and pay his staff. Communication about his financial affairs has broken down over the last few months. This means that I am looking a Chippy's overview screen and see various penalty payments and interest on the total amount of tax due. I'm responsible for helping Chippy given his current precarious circumstances. <p>photo by <a href='https://www.flickr.com/photos/metalcowboy/1604662658/in/photolist-3rNjiy-atCcFM-nCBsjF-axgWCZ-ai9vy6-nCTLSd-semec4-axjCKC-atETEf-9pFzj7-axjCv1-7mKmcp-eYQKz7-cUMneL-atCetn-ai9viB-axjCFy-ai9vCK-atCbYi-eYQMxW-9UxthG-aicj19-eYQFwL-aPrKzV-qGzAJB-eYQLTw-eYDgbF-kxSuik-7mKsAx-atCdKR-9o8ar9-pn5Lbq-dyHtVR-8rADJk-ctV83f-fvqJKk-7QyySH-ai9vHx-7mPdY9-dC4vwZ-iCsRz-axgWeV-9o57Xz-axAreG-atCcbc-ai9va6-6E1rZb-a1h8tJ-dCtzLU-7QBTfN'>Swift Benjamin</a> under <a href='https://creativecommons.org/licenses/by/2.0/'>CC BY 4.0</a></p>"
+          },{
+            "caption": "Account overview",
+            "imgref": "images/dev-july-2016-penalties-interest/client-summary.png",
+            "note": "As an agent I can see an overview of my client's recent allocations and notice that there are some red flags to indicate that there are some issues in some months"
+          },{
+            "caption": "Business as Usual",
+            "imgref": "images/dev-july-2016-penalties-interest/business-as-usual.png",
+            "note": "Business as usual - As an agent, I have submitted my PAYE information (FPS) for the month and I can see that I have paid all tax and NI due."
+          },{
+            "caption": "Specified Charges",
+            "imgref": "images/dev-july-2016-penalties-interest/specified-charges.png",
+            "note": "As an agent, I was unable to provide PAYE details as my client has been very uncommunicative and has let some staff go without proper procedure. I can see that HMRC has provided estimated amounts based on last month."
+          },{
+            "caption": "Penalties and Interest",
+            "imgref": "images/dev-july-2016-penalties-interest/penalties-interest.png",
+            "note": "Penalty - As an agent, I can see that Chippy has not paid the tax due in time and now faces penalties which are due on the 22nd of each month (3 days earlier if not paying online). I can also now see that the situation has escalated and interest is now being charged on the full amount of tax due as well as the penalty amount."
+          }]
+        }]
 }
