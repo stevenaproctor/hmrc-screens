@@ -45,6 +45,10 @@ var data = {
         "imgref": "images/web-qa-2016-july/allocations-tab.png",
         "note": "Shows a summary list of client's allocations by month and year."
       },{
+				"caption": "Webchat popup",
+				"imgref": "images/web-qa-2016-july/webchat-popup.png",
+				"note": "Allocations tab (and the Payments tab) offer WebChat after 20 seconds. The screenshot illustrates a conversation taking place."
+			},{
         "caption": "Allocations tab expanded",
         "imgref": "images/web-qa-2016-july/allocations-tab-expanded.png",
         "note": "Allows monthly allocations to be expanded to show further details."
