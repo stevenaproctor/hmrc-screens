@@ -168,6 +168,8 @@ function buildJson(newDir) {
                             }
                             var json = JSON.stringify(data);
                             fs.writeFile(newDir + '/data.js', 'var data = ' + json + '');
+
+                            console.log(colors.green('Service is now complete and is waiting for you, you can find it here ' + newDir + '/index.html'))
                         }
                     });
 
