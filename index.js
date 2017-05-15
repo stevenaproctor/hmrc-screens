@@ -9,21 +9,85 @@ prompt.delimiter = colors.green(" %% ");
 //Service directory
 var serviceDir = './service/';
 var newDir;
+var serviceType;
+var serviceTitle;
 
-prompt.get({
-    properties: {
-        directory: {
-            message: colors.green('Please enter a new folder name')
+//Name the service type
+function init() {
+
+    prompt.get({
+            properties: {
+                serviceType: {
+                    message: colors.green('What is the service called?')
+                }
+            }
+        },
+
+        function (err, result) {
+
+            if (err) {
+                console.log(colors.red('Sorry there is a problem with the service name.'));
+            } else {
+                serviceType = result.serviceType;
+            }
+
+            getServiceTitle()
+
+        });
+
+}
+
+
+//Enter a service a title
+
+function getServiceTitle() {
+    prompt.get({
+            properties: {
+                serviceTitle: {
+                    message: colors.green('Enter a title for the service.')
+                }
+            }
+        },
+
+        function (err, result) {
+
+            if (err) {
+                console.log(colors.red('Sorry there is a problem with that service title. The error is' + err));
+            } else {
+                serviceTitle = result.serviceTitle;
+            }
+
+            getFolderName()
+
+        });
+
+}
+
+//Name the folder for the new service
+
+function getFolderName() {
+    prompt.get({
+        properties: {
+            directory: {
+                message: colors.green('Please enter a new folder name')
+            }
         }
-    }
-}, function (err, result) {
+    }, function (err, result) {
 
-    var directory = result.directory;
+        if (err) {
+            console.log(colors.red('Sorry there is a problem creating the folder name. The error is' + err));
+        } else {
 
-    createFolder(directory)
-});
+            var directory = result.directory;
+        }
+        createNewFolder(directory)
+    });
+}
 
-function createFolder(directory) {
+
+//Create the folder for the new service
+
+function createNewFolder(directory) {
 
     newDir = serviceDir + directory
 
@@ -39,15 +103,17 @@ function createFolder(directory) {
                 if (err) {
                     console.log(colors.red('Sorry there was a problem creating the images folder.'));
                 } else {
-                    // Continue
+                    fs.readFile('./template/index.html', function (err, data) {
+                        fs.writeFile(newDir + '/index.html', data);
+                        buildJson(newDir)
+                    });
                 }
-                buildJson(newDir)
+
             })
         }
     });
 
 };
-
 
 function buildJson(newDir) {
     prompt.start();
@@ -69,7 +135,7 @@ function buildJson(newDir) {
 
         function getJsonObj(newDir) {
 
-            var imagesDir = newDir +'/images'
+            var imagesDir = newDir + '/images'
 
             fs.readdir(imagesDir, function (err, files) {
 
@@ -78,7 +144,12 @@ function buildJson(newDir) {
                 } else {
                     // Build JSON
                     var data = {
-                        "userjourneys": []
+                        "service": serviceType,
+                        "last-updated": "Some date",
+                        "userjourneys": [{
+                            "title": serviceTitle,
+                            "path": []
+                        }]
                     };
 
                     fs.exists(newDir + 'data.js', function (exists) {
@@ -87,12 +158,14 @@ function buildJson(newDir) {
                         } else {
                             for (var i = 0; i <= files.length - 1; i++) {
 
-                                data.userjourneys.push({
-                                    "caption": files[i].replace('.png', '.').replace('-', ' '),
-                                    "note": "Agents are asked if they want to switch to the new service. If they select ‘no’ they are redirected to HMRC online portal services."
-                                });
+                                data.userjourneys[0].path.push(
+                                    {
+                                        "caption": files[i].replace(/\.jpg$|\.gif$|\.png$/, '').replace(/[0-9]+/, '').replace(/-/g, ' '),
+                                        "imgref": "images/" + files[i],
+                                        "note": "Notes go here..."
+                                    }
+                                );
                             }
-
                             var json = JSON.stringify(data);
                             fs.writeFile(newDir + '/data.js', 'var data = ' + json + '');
                         }
@@ -106,6 +179,11 @@ function buildJson(newDir) {
     });
 
 }
+
+init();
+
+
+
 
 
 
