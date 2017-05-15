@@ -1,0 +1,22 @@
+{
+  "name": "hmrc-screens",
+  "version": "1.0.0",
+  "description": "Prototype for documenting user journeys with screenshots",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ian-leggett/hmrc-screens.git"
+  },
+  "author": "Ian Leggett, Gavin Wye",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ian-leggett/hmrc-screens/issues"
+  },
+  "homepage": "https://github.com/ian-leggett/hmrc-screens#readme",
+  "devDependencies": {
+    "colors": "^1.1.2"
+  }
+}
