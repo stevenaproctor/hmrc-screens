@@ -1,1 +1,0 @@
-var data = {"service":"foo","last-updated":"Some date","userjourneys":[{"title":"foo","path":[]}]}

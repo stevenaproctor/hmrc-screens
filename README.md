@@ -40,6 +40,8 @@ On Windows you can use the [Awesome Screenshot](https://chrome.google.com/websto
 You can also use services like [BrowserStack](http://www.browserstack.com/) or [Sauce Labs](https://saucelabs.com/) for automated serverside screenshot capture.
 >>>>>>> FETCH_HEAD
 
+## Option 01
+
 ### 1. Add your images
 
 Each service has it's own folder in '/service'. Drop all your images into the 'images' subfolder (1024px wide is best).
@@ -52,4 +54,18 @@ Edit the data.js file in your numbered exemplar folder. It contains a few exampl
 
 Once you're done, don't forget to add a link to your service from the 'index.html' file in the root of this repository (not the one in your service folder).
 
-..
+## Option 2
+
+## Build the JSON file dynamically 
+
+### 1. Navigate to the root directory and type 'node index.js' and follow the prompts
+### 2. Enter your service name
+### 3. Enter your service title
+### 4. Enter the new folder name
+### 5. Paste your images in the new folder and type 'go'
+
+You should have a new JSON file called 'data.js' in your new folder so now navigate to the html file and you should have everything populated.
+
+
+
+
