@@ -9,80 +9,34 @@ prompt.delimiter = colors.green(" %% ");
 //Service directory
 var serviceDir = './service/';
 var newDir;
-var serviceType;
+var scenarioName;
 var serviceTitle;
 
-//Name the service type
-function init() {
-
-    prompt.get({
-            properties: {
-                serviceType: {
-                    message: colors.green('What is the service called?')
-                }
-            }
+var schema = {
+    properties: {
+        serviceName: {
+            message: colors.green('What is the service called?')
         },
-
-        function (err, result) {
-
-            if (err) {
-                console.log(colors.red('Sorry there is a problem with the service name.'));
-            } else {
-                serviceType = result.serviceType;
-            }
-
-            getServiceTitle()
-
-        });
-
-}
-
-
-//Enter a service a title
-
-function getServiceTitle() {
-    prompt.get({
-            properties: {
-                serviceTitle: {
-                    message: colors.green('Enter a title for the service.')
-                }
-            }
+        scenarioName: {
+            message: colors.green('Enter the name of the scenario for this service.')
         },
-
-        function (err, result) {
-
-            if (err) {
-                console.log(colors.red('Sorry there is a problem with that service title. The error is' + err));
-            } else {
-                serviceTitle = result.serviceTitle;
-            }
-
-            getFolderName()
-
-        });
-
+        directoryName: {
+            message: colors.green('Please enter a new directory name for this service')
+        }
+    }
 }
 
-//Name the folder for the new service
+prompt.get(schema, function (err, result) {
 
-function getFolderName() {
-    prompt.get({
-        properties: {
-            directory: {
-                message: colors.green('Please enter a new folder name')
-            }
-        }
-    }, function (err, result) {
+    if (err) {
+        console.log('Sorry there was an error.', err)
+        process.exit(1)
+    }
+    scenarioName = result.scenarioName
+    serviceTitle = result.serviceTitle
+    createNewFolder(result.directoryName)
 
-        if (err) {
-            console.log(colors.red('Sorry there is a problem creating the folder name. The error is' + err));
-        } else {
-
-            var directory = result.directory;
-        }
-        createNewFolder(directory)
-    });
-}
+})
 
 
 //Create the folder for the new service
@@ -144,7 +98,7 @@ function buildJson(newDir) {
                 } else {
                     // Build JSON
                     var data = {
-                        "service": serviceType,
+                        "service": scenarioName,
                         "last-updated": "Some date",
                         "userjourneys": [{
                             "title": serviceTitle,
@@ -160,7 +114,7 @@ function buildJson(newDir) {
 
                                 data.userjourneys[0].path.push(
                                     {
-                                        "caption": files[i].replace(/\.jpg$|\.gif$|\.png$/, '').replace(/[0-9]+/, '').replace(/-/g, ' '),
+                                        "caption": files[i].replace(/((-?[0-9]+-?).*(\.gif|\.png|\.jpg))/, '').replace(/-/g, ' '),
                                         "imgref": "images/" + files[i],
                                         "note": "Notes go here..."
                                     }
@@ -181,8 +135,6 @@ function buildJson(newDir) {
     });
 
 }
-
-init();
 
 
 
