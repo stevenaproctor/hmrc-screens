@@ -58,6 +58,8 @@ Once you're done, don't forget to add a link to your service from the 'index.htm
 
 ## Build the JSON file dynamically 
 
+For this to work you will have to have all of the screenshots in a folder and they will need to be named correctly. To do this you can use the [Automator workflow](save-files-in-order.workflow). The woerkflow makes filenames web friendly, replaces spaces with `-` and sorts the files according to the date and time they were created. Giving you a logical journey providing you captured them in order in the same session.
+
 ### 1. Navigate to the root directory and type 'node index.js' and follow the prompts
 ### 2. Enter your service name
 ### 3. Enter your service title

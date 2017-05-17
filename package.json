@@ -18,5 +18,8 @@
   "homepage": "https://github.com/ian-leggett/hmrc-screens#readme",
   "devDependencies": {
     "colors": "^1.1.2"
+  },
+  "dependencies": {
+    "prompt": "^1.0.0"
   }
 }
