@@ -10,7 +10,7 @@ prompt.delimiter = colors.green(" %% ");
 var serviceDir = './service/';
 var newDir;
 var scenarioName;
-var serviceTitle;
+var serviceName;
 
 var schema = {
     properties: {
@@ -33,7 +33,7 @@ prompt.get(schema, function (err, result) {
         process.exit(1)
     }
     scenarioName = result.scenarioName
-    serviceTitle = result.serviceTitle
+    serviceName = result.serviceName
     createNewFolder(result.directoryName)
 
 })
@@ -98,10 +98,10 @@ function buildJson(newDir) {
                 } else {
                     // Build JSON
                     var data = {
-                        "service": scenarioName,
+                        "service": serviceName,
                         "last-updated": "Some date",
                         "userjourneys": [{
-                            "title": serviceTitle,
+                            "title": scenarioName,
                             "path": []
                         }]
                     };
