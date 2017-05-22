@@ -123,7 +123,7 @@ function getJsonObj(newDir) {
 
                         data.userjourneys[0].path.push(
                             {
-                                "caption": images[i].replace(/((-?[0-9]+-?).*(\.gif|\.png|\.jpg))/, '').replace(/-/g, ' '),
+                                "caption": images[i].replace(/((-?[0-9]+-?).*(\.gif|\.png|\.jpg))/, '').replace(/-*/g, ' '),
                                 "imgref": "images/" + images[i],
                                 "note": "Notes go here..."
                             }
