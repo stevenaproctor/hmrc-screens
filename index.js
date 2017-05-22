@@ -6,7 +6,6 @@ var colors = require('colors/safe');
 prompt.message = colors.yellow("Question!");
 prompt.delimiter = colors.green(" %% ");
 
-//Service directory
 var serviceDir = './service/';
 var newDir;
 var scenarioName;
@@ -41,7 +40,7 @@ prompt.get(schema, function (err, result) {
 
 //Create the folder for the new service
 
-function createNewFolder(directory) {
+module.exports = function createNewFolder(directory) {
 
     newDir = serviceDir + directory
 
@@ -66,6 +65,8 @@ function createNewFolder(directory) {
             })
         }
     });
+
+    return newDir;
 
 };
 
