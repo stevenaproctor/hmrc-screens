@@ -59,7 +59,7 @@ function createNewFolder(directory) {
                 } else {
                     fs.readFile('./template/index.html', function (err, data) {
                         fs.writeFile(newDir + '/index.html', data);
-                        buildJson(newDir)
+                        goBuild(newDir)
                     });
                 }
 
@@ -69,7 +69,7 @@ function createNewFolder(directory) {
 
 };
 
-function buildJson(newDir) {
+function goBuild(newDir) {
     prompt.start();
     prompt.get({
         properties: {
@@ -84,62 +84,73 @@ function buildJson(newDir) {
         if (err) {
             console.log(colors.red('Sorry there was a problem'));
         } else if (answer === 'go') {
-            getJsonObj(newDir)
+            checkImagesDir(newDir)
         }
 
     });
 
 }
 
-function getJsonObj(newDir) {
+function checkImagesDir(newDir) {
 
-    var imagesDir = newDir + '/images'
+    var imagesDir = newDir + '/images';
 
     fs.readdir(imagesDir, function (err, files) {
 
         if (err) {
             console.log(colors.red('Cannot read directory: ' + imagesDir));
         } else {
-            // Build JSON
-            var data = {
-                "service": serviceName,
-                "last-updated": "Some date",
-                "userjourneys": [{
-                    "title": scenarioName,
-                    "path": []
-                }]
-            };
-
-            fs.exists(newDir + 'data.js', function (exists) {
-                if (exists) {
-                    console.log(colors.red("Sorry " + newDir + "data.js file already exists please delete the file in order to continue"));
-                } else {
-
-                    var images = files.filter(function (file) {
-                        return /\.(jpe?g|gif|png)/.test(file)
-                    })
-
-                    for (var i = 0; i <= images.length - 1; i++) {
-
-                        data.userjourneys[0].path.push(
-                            {
-                                "caption": images[i].replace(/((-?[0-9]+-?).*(\.gif|\.png|\.jpg))/, '').replace(/-/g, ' '),
-                                "imgref": "images/" + images[i],
-                                "note": "Notes go here..."
-                            }
-                        );
-                    }
-                    var json = JSON.stringify(data);
-                    fs.writeFile(newDir + '/data.js', 'var data = ' + json + '');
-
-                    console.log(colors.green('Service is now complete and is waiting for you, you can find it here ' + newDir + '/index.html'))
-                }
-            });
-
+            buildData(files)
         }
 
-    })
+    });
 }
+
+function buildData(files) {
+
+    // Build JSON
+    var data = {
+        "service": serviceName,
+        "last-updated": "Some date",
+        "userjourneys": [{
+            "title": scenarioName,
+            "path": []
+        }]
+    };
+
+    fs.exists(newDir + 'data.js', function (exists) {
+        if (exists) {
+            console.log(colors.red("Sorry " + newDir + "data.js file already exists please delete the file in order to continue"));
+        } else {
+
+            var images = files.filter(function (file) {
+                return /\.(jpe?g|gif|png)/.test(file)
+            })
+
+
+            for (var i = 0; i <= images.length - 1; i++) {
+
+                data.userjourneys[0].path.push(
+                    {
+                        "caption": images[i].replace(/-?[0-9]+-?/, '') //Remove numbers
+                            .replace(/-/g, ' ') //Remove hyphens
+                            .replace(/\.gif|\.png|\.jpg/, '') //Remove file extensions
+                            .replace(/\s{2,}/g, ' '), //Remove double spaces
+                        "imgref": "images/" + images[i],
+                        "note": "Notes go here..."
+                    }
+                );
+            }
+            var json = JSON.stringify(data);
+            fs.writeFile(newDir + '/data.js', 'var data = ' + json + '');
+
+            console.log(colors.green('Service is now complete and is waiting for you, you can find it here ' + newDir + '/index.html'))
+        }
+    });
+
+}
+
+
 
 
 
