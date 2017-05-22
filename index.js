@@ -40,7 +40,7 @@ prompt.get(schema, function (err, result) {
 
 //Create the folder for the new service
 
-module.exports = function createNewFolder(directory) {
+function createNewFolder(directory) {
 
     newDir = serviceDir + directory
 
