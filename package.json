@@ -4,6 +4,7 @@
   "description": "Prototype for documenting user journeys with screenshots",
   "main": "index.js",
   "scripts": {
+    "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
