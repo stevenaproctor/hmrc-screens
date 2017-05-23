@@ -1,101 +1,101 @@
 var data = {
-    "service": "marriage allowance",
-    "last-updated": "Some date",
+    "service": "Marriage allowance",
+    "last-updated": "23rd May 2017",
     "userjourneys": [{
-        "title": "current year only",
+        "title": "Current year only",
         "path": [{
-            "caption": "your relationship",
+            "caption": "Your relationship",
             "imgref": "images/current-year/01-your-relationship---marriage-allowance-eligibility---gov.uk.png",
             "note": "Notes go here..."
         }, {
-            "caption": "your date of birth",
+            "caption": "Your date of birth",
             "imgref": "images/current-year/02-your-date-of-birth---marriage-allowance-eligibility---gov.uk.png",
             "note": "Notes go here..."
         }, {
-            "caption": "your income",
+            "caption": "Your income",
             "imgref": "images/current-year/03-your-income---marriage-allowance-eligibility---gov.uk.png",
             "note": "Notes go here..."
         }, {
-            "caption": "your partner's income",
+            "caption": "Your partner's income",
             "imgref": "images/current-year/04-your-partner's-income---marriage-allowance-eligibility---gov.uk.png",
             "note": "Notes go here..."
         }, {
-            "caption": "your partner's details",
+            "caption": "Your partner's details",
             "imgref": "images/current-year/05-your-partner's-details---marriage-allowance-application---gov.uk.png",
             "note": "Notes go here..."
         }, {
-            "caption": "date of marriage or civil partnership",
+            "caption": "Date of marriage or civil partnership",
             "imgref": "images/current-year/06-date-of-marriage-or-civil-partnership---marriage-allowance-application---gov.uk.png",
             "note": "Notes go here..."
         }, {
-            "caption": "apply for the current tax year",
+            "caption": "Apply for the current tax year",
             "imgref": "images/current-year/07-apply-for-the-current-tax-year---marriage-allowance-application---gov.uk.png",
             "note": "Notes go here..."
         }, {
-            "caption": "confirm your email address",
+            "caption": "Confirm your email address",
             "imgref": "images/current-year/08-confirm-your-email-address---marriage-allowance-application---gov.uk.png",
             "note": "Notes go here..."
         }, {
-            "caption": "check your details and confirm",
+            "caption": "Check your details and confirm",
             "imgref": "images/current-year/09-check-your-details-and-confirm---marriage-allowance-application---gov.uk.png",
             "note": "Notes go here..."
         }, {
-            "caption": "application confirmed",
+            "caption": "Application confirmed",
             "imgref": "images/current-year/10-application-confirmed---marriage-allowance-application---gov.uk.png",
             "note": "Notes go here..."
         }]
     },{
-        "title": "previous year",
+        "title": "Previous year",
         "path": [{
-            "caption": "your relationship",
+            "caption": "Your relationship",
             "imgref": "images/previous-year/01-your-relationship---marriage-allowance-eligibility---gov.uk.png",
             "note": "Notes go here..."
         }, {
-            "caption": "your date of birth",
+            "caption": "Your date of birth",
             "imgref": "images/previous-year/02-your-date-of-birth---marriage-allowance-eligibility---gov.uk.png",
             "note": "Notes go here..."
         }, {
-            "caption": "your income",
+            "caption": "Your income",
             "imgref": "images/previous-year/03-your-income---marriage-allowance-eligibility---gov.uk.png",
             "note": "Notes go here..."
         }, {
-            "caption": "your partner's income",
+            "caption": "Your partner's income",
             "imgref": "images/previous-year/04-your-partner's-income---marriage-allowance-eligibility---gov.uk.png",
             "note": "Notes go here..."
         }, {
-            "caption": "your partner's details",
+            "caption": "Your partner's details",
             "imgref": "images/previous-year/05-your-partner's-details---marriage-allowance-application---gov.uk.png",
             "note": "Notes go here..."
         }, {
-            "caption": "date of marriage or civil partnership",
+            "caption": "Date of marriage or civil partnership",
             "imgref": "images/previous-year/06-date-of-marriage-or-civil-partnership---marriage-allowance-application---gov.uk.png",
             "note": "Notes go here..."
         }, {
-            "caption": "apply for the current tax year",
+            "caption": "Apply for the current tax year",
             "imgref": "images/previous-year/07-apply-for-the-current-tax-year---marriage-allowance-application---gov.uk.png",
             "note": "Notes go here..."
         }, {
-            "caption": "apply for earlier tax years 3",
+            "caption": "Apply for earlier tax years 3",
             "imgref": "images/previous-year/08-apply-for-earlier-tax-years---marriage-allowance-application---gov.uk-3.png",
             "note": "Notes go here..."
         }, {
-            "caption": "apply for earlier tax years 2",
+            "caption": "Apply for earlier tax years 2",
             "imgref": "images/previous-year/09-apply-for-earlier-tax-years---marriage-allowance-application---gov.uk-2.png",
             "note": "Notes go here..."
         }, {
-            "caption": "apply for earlier tax years",
+            "caption": "Apply for earlier tax years",
             "imgref": "images/previous-year/10-apply-for-earlier-tax-years---marriage-allowance-application---gov.uk.png",
             "note": "Notes go here..."
         }, {
-            "caption": "confirm your email address",
+            "caption": "Confirm your email address",
             "imgref": "images/previous-year/11-confirm-your-email-address---marriage-allowance-application---gov.uk.png",
             "note": "Notes go here..."
         }, {
-            "caption": "check your details and confirm",
+            "caption": "Check your details and confirm",
             "imgref": "images/previous-year/12-check-your-details-and-confirm---marriage-allowance-application---gov.uk.png",
             "note": "Notes go here..."
         }, {
-            "caption": "application confirmed",
+            "caption": "Application confirmed",
             "imgref": "images/previous-year/13-application-confirmed---marriage-allowance-application---gov.uk.png",
             "note": "Notes go here..."
         }]
