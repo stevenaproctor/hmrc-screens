@@ -1,0 +1,1 @@
+var data = {"last-updated":"Some date","userjourneys":[{"path":[]}]}
