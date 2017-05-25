@@ -4,7 +4,7 @@
   "description": "Prototype for documenting user journeys with screenshots",
   "main": "index.js",
   "scripts": {
-    "start": "gulp",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ian-leggett/hmrc-screens#readme",
   "devDependencies": {
     "colors": "^1.1.2",
+    "moment": "^2.18.1",
     "prompt": "^1.0.0"
   }
 }

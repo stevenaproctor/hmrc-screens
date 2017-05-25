@@ -2,6 +2,7 @@ var fs = require('fs');
 var prompt = require('prompt');
 var util = require('util');
 var colors = require('colors/safe');
+var moment = require('moment')
 
 prompt.message = colors.yellow("Question!");
 prompt.delimiter = colors.green(" %% ");
@@ -66,8 +67,6 @@ function createNewFolder(directory) {
         }
     });
 
-    return newDir;
-
 };
 
 function goBuild(newDir) {
@@ -112,7 +111,7 @@ function buildData(files) {
     // Build JSON
     var data = {
         "service": serviceName,
-        "last-updated": "Some date",
+        "last-updated": moment().format("DD-MM-YYYY"),
         "userjourneys": [{
             "title": scenarioName,
             "path": []
