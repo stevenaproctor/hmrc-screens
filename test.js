@@ -22,10 +22,13 @@ test('Creates a directory for a new service', function (t) {
     callback(null, 'go')
   })
 
+  sinon.stub(console, 'log')
   createNewFolder(testDir)
 
   getFile(dataFile, function (file) {
     if (file) {
+      console.log.restore()
+
       var dataContents = fs.readFileSync(file).toString()
       const expectedContent = 'var data = {"last-updated":"Some date","userjourneys":[{"path":[]}]}'
 
