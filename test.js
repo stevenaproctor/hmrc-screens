@@ -7,6 +7,10 @@ var prompt = require('prompt')
 var getFile = require('./test/utils/get-file')
 var createNewFolder = require('./index').createNewFolder
 
+var cleanup = function (path) {
+  rimraf.sync(path)
+}
+
 test('Creates a directory for a new service', function (t) {
   t.plan(1)
 
@@ -14,7 +18,6 @@ test('Creates a directory for a new service', function (t) {
   var testDirPath = path.join(__dirname, 'service', testDir)
   var dataFile = path.join(testDirPath, 'data.js')
 
-  rimraf.sync(testDirPath)
   sinon.stub(prompt, 'getInput').callsFake(function (prop, callback) {
     callback(null, 'go')
   })
@@ -23,10 +26,14 @@ test('Creates a directory for a new service', function (t) {
 
   getFile(dataFile, function (file) {
     if (file) {
-      var data = fs.readFileSync(file).toString()
+      console.log.restore()
+
+      var dataContents = fs.readFileSync(file).toString()
       const expectedContent = 'var data = {"last-updated":"Some date","userjourneys":[{"path":[]}]}'
 
-      t.equal(data, expectedContent, 'with a data file')
+      t.equal(dataContents, expectedContent, 'with a data file')
+
+      cleanup(testDirPath)
     }
   })
 })
