@@ -29,7 +29,7 @@ test('Creates a directory for a new service', function (t) {
     if (file) {
       console.log.restore()
 
-      var serviceDir = fs.readdirSync(path.join(testDirPath))
+      var serviceDir = fs.readdirSync(testDirPath)
       var dataContents = fs.readFileSync(file).toString()
       const expectedContent = 'var data = {"last-updated":"Some date","userjourneys":[{"path":[]}]}'
 
