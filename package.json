@@ -17,7 +17,7 @@
     "start": "node index.js",
     "test": "npm run lint && NODE_ENV=test tape test/*.js",
     "test:watch": "nodemon -q --exec 'npm run test' --ignore service/",
-    "lint": "standard '*.js' 'test/**/*.js'"
+    "lint": "standard '*.js' 'lib/**/*.js' 'test/**/*.js' --fix"
   },
   "devDependencies": {
     "colors": "^1.1.2",
