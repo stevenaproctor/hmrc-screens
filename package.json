@@ -2,13 +2,6 @@
   "name": "hmrc-screens",
   "version": "1.0.0",
   "description": "Prototype for documenting user journeys with screenshots",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "npm run lint && NODE_ENV=test tape test.js",
-    "test:watch": "nodemon -q --exec 'npm run test' --ignore service/",
-    "lint": "standard index.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ian-leggett/hmrc-screens.git"
@@ -19,6 +12,13 @@
     "url": "https://github.com/ian-leggett/hmrc-screens/issues"
   },
   "homepage": "https://github.com/ian-leggett/hmrc-screens#readme",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "npm run lint && NODE_ENV=test tape test.js",
+    "test:watch": "nodemon -q --exec 'npm run test' --ignore service/",
+    "lint": "standard '*.js' 'test/**/*.js'"
+  },
   "devDependencies": {
     "colors": "^1.1.2",
     "nodemon": "^1.11.0",
