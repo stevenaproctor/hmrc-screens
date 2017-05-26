@@ -19,17 +19,15 @@ var schema = {
   }
 }
 
-if (process.env.NODE_ENV && process.env.NODE_ENV !== 'test') {
-  prompt.get(schema, function (err, result) {
-    if (err) {
-      console.log('Sorry there was an error.', err)
-      process.exit(1)
-    }
+prompt.get(schema, function (err, result) {
+  if (err) {
+    console.log('Sorry there was an error.', err)
+    process.exit(1)
+  }
 
-    createService(
-      result.directoryName,
-      result.scenarioName,
-      result.serviceName
-    )
-  })
-}
+  createService(
+    result.directoryName,
+    result.scenarioName,
+    result.serviceName
+  )
+})
