@@ -15,7 +15,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "npm run lint && NODE_ENV=test tape test.js",
+    "test": "npm run lint && NODE_ENV=test tape test/*.js",
     "test:watch": "nodemon -q --exec 'npm run test' --ignore service/",
     "lint": "standard '*.js' 'test/**/*.js'"
   },

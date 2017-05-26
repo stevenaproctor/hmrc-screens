@@ -4,8 +4,8 @@ var test = require('tape')
 var sinon = require('sinon')
 var rimraf = require('rimraf')
 var prompt = require('prompt')
-var getFile = require('./test/utils/get-file')
-var createNewFolder = require('./index').createNewFolder
+var getFile = require('./utils/get-file')
+var createNewFolder = require('../index').createNewFolder
 
 var cleanup = function (path) {
   rimraf.sync(path)
@@ -15,7 +15,7 @@ test('Creates a directory for a new service', function (t) {
   t.plan(4)
 
   var testDir = 'test-directory'
-  var testDirPath = path.join(__dirname, 'service', testDir)
+  var testDirPath = path.join(__dirname, '..', 'service', testDir)
   var dataFile = path.join(testDirPath, 'data.js')
 
   sinon.stub(prompt, 'getInput').callsFake(function (prop, callback) {
