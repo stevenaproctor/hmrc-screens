@@ -12,7 +12,7 @@ var cleanup = function (path) {
 }
 
 test('Creates a directory for a new service', function (t) {
-  t.plan(1)
+  t.plan(4)
 
   var testDir = 'test-directory'
   var testDirPath = path.join(__dirname, 'service', testDir)
@@ -29,10 +29,14 @@ test('Creates a directory for a new service', function (t) {
     if (file) {
       console.log.restore()
 
+      var serviceDir = fs.readdirSync(path.join(testDirPath))
       var dataContents = fs.readFileSync(file).toString()
       const expectedContent = 'var data = {"last-updated":"Some date","userjourneys":[{"path":[]}]}'
 
-      t.equal(dataContents, expectedContent, 'with a data file')
+      t.true(serviceDir.includes('images'), 'with an images directory')
+      t.true(serviceDir.includes('index.html'), 'with an index.html file')
+      t.true(serviceDir.includes('data.js'), 'with a data.js file')
+      t.equal(dataContents, expectedContent, 'and the data.js file has content')
 
       cleanup(testDirPath)
     }
