@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "npm run lint && NODE_ENV=test tape test.js",
-    "test:watch": "nodemon --exec 'npm run test' --ignore service/",
+    "test:watch": "nodemon -q --exec 'npm run test' --ignore service/",
     "lint": "standard index.js"
   },
   "repository": {
