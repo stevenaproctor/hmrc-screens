@@ -55,7 +55,6 @@ function createNewFolder (directory) {
 };
 
 function goBuild (newDir) {
-  prompt.start()
   prompt.get({
     properties: {
       answer: {
@@ -118,12 +117,16 @@ function buildData (files) {
   console.log(colors.green('Service is now complete and is waiting for you, you can find it here ' + newDir + '/index.html'))
 }
 
-prompt.get(schema, function (err, result) {
-  if (err) {
-    console.log('Sorry there was an error.', err)
-    process.exit(1)
-  }
-  scenarioName = result.scenarioName
-  serviceName = result.serviceName
-  createNewFolder(result.directoryName)
-})
+if (process.env.NODE_ENV && process.env.NODE_ENV !== 'test') {
+  prompt.get(schema, function (err, result) {
+    if (err) {
+      console.log('Sorry there was an error.', err)
+      process.exit(1)
+    }
+    scenarioName = result.scenarioName
+    serviceName = result.serviceName
+    createNewFolder(result.directoryName)
+  })
+}
+
+module.exports = {createNewFolder: createNewFolder}
