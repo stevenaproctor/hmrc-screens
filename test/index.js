@@ -20,11 +20,13 @@ test('Creates a directory for a new service', function (t) {
   var testDirPath = path.join(__dirname, '..', 'service', testDir)
   var dataFile = path.join(testDirPath, 'data.js')
 
+  sinon.stub(console, 'log')
   sinon.stub(prompt, 'getInput').callsFake(function (prop, callback) {
     callback(null, 'go')
   })
 
-  sinon.stub(console, 'log')
+  cleanup(testDirPath)
+
   createService(testDir, testService, testScenario)
 
   getFile(dataFile, function (file) {
