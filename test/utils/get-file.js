@@ -1,10 +1,10 @@
 var execFile = require('child_process').execFile
 
-var getData = function (file, cb) {
+var getFile = function (file, cb) {
   execFile('ls', [file], function (err, stdout, stderr) {
     if (err) {
       process.nextTick(function () {
-        getData(file, cb)
+        getFile(file, cb)
       })
     }
 
@@ -12,4 +12,4 @@ var getData = function (file, cb) {
   })
 }
 
-module.exports = getData
+module.exports = getFile
