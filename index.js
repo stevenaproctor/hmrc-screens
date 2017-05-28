@@ -1,6 +1,7 @@
 var path = require('path')
 var prompt = require('prompt')
 var colors = require('colors/safe')
+var mkDir = require('./lib/mkdir')
 var createService = require('./lib/create-service')
 
 var servicesDir = path.join(__dirname, 'service')
@@ -28,10 +29,13 @@ prompt.get(schema, function (err, result) {
     process.exit(1)
   }
 
-  createService(
-    servicesDir,
-    result.directoryName,
-    result.scenarioName,
-    result.serviceName
-  )
+  mkDir(servicesDir)
+    .then(function (servicesDir) {
+      createService(
+        servicesDir,
+        result.directoryName,
+        result.scenarioName,
+        result.serviceName
+      )
+    })
 })
