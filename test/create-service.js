@@ -10,10 +10,11 @@ var createService = require('../lib/create-service')
 test('Create a directory for a new service', function (t) {
   t.plan(3)
 
+  var servicesDir = path.join(__dirname, 'service')
   var testDir = 'test-directory'
   var testService = 'test-service'
   var testScenario = 'test-scenario'
-  var testDirPath = path.join(__dirname, '..', 'service', testDir)
+  var testDirPath = path.join(servicesDir, testDir)
   var dataFile = path.join(testDirPath, 'data.js')
 
   sinon.stub(console, 'log')
@@ -21,9 +22,10 @@ test('Create a directory for a new service', function (t) {
     callback(null, 'go')
   })
 
-  cleanup(testDirPath)
+  cleanup(servicesDir)
+  fs.mkdirSync(servicesDir)
 
-  createService(testDir, testService, testScenario)
+  createService(servicesDir, testDir, testService, testScenario)
 
   getFile(dataFile, function (file) {
     if (file) {
@@ -34,7 +36,7 @@ test('Create a directory for a new service', function (t) {
       t.true(serviceDir.includes('index.html'), 'with an index.html file')
       t.true(serviceDir.includes('data.js'), 'with a data.js file')
 
-      cleanup(testDirPath)
+      cleanup(servicesDir)
     }
   })
 })
