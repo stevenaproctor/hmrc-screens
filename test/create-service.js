@@ -2,14 +2,10 @@ var fs = require('fs')
 var path = require('path')
 var test = require('tape')
 var sinon = require('sinon')
-var rimraf = require('rimraf')
 var prompt = require('prompt')
+var cleanup = require('./utils/cleanup')
 var getFile = require('./utils/get-file')
 var createService = require('../lib/create-service')
-
-var cleanup = function (path) {
-  rimraf.sync(path)
-}
 
 test('Create a directory for a new service', function (t) {
   t.plan(3)

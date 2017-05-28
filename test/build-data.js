@@ -2,13 +2,9 @@ var fs = require('fs')
 var path = require('path')
 var test = require('tape')
 var sinon = require('sinon')
-var rimraf = require('rimraf')
+var cleanup = require('./utils/cleanup')
 var getFile = require('./utils/get-file')
 var buildData = require('../lib/build-data')
-
-var cleanup = function (path) {
-  rimraf.sync(path)
-}
 
 test('Create a data file for a service', function (t) {
   t.plan(1)
