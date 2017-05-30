@@ -10,3 +10,4 @@ zeus.json
 .fseventsd
 Icon?
 node_modules/
+test/service/
