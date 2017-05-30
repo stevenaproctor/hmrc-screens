@@ -42,7 +42,7 @@ test('Create a data file for a service', function (t) {
       console.log.restore()
 
       var dataContents = fs.readFileSync(file).toString()
-      const expectedContents = 'var data = ' + JSON.stringify(data)
+      const expectedContents = 'var data = ' + JSON.stringify(data, null, 2)
 
       t.equal(dataContents, expectedContents, 'with a data object built from args')
 
