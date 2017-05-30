@@ -9,19 +9,23 @@ var servicesDir = path.join(__dirname, 'service')
 var schema = {
   properties: {
     serviceName: {
-      message: colors.green('What is the service called?')
+      description: colors.green('What is the service called?'),
+      message: colors.red('We need the name of your service so we can create it'),
+      required: true
     },
     scenarioName: {
-      message: colors.green('Enter the name of the scenario for this service')
+      description: colors.green('Enter the name of the scenario for this service')
     },
     directoryName: {
-      message: colors.green('Please enter a new directory name for this service')
+      description: colors.green('Please enter a new directory name for this service')
     }
   }
 }
 
 prompt.message = colors.yellow('Question!')
 prompt.delimiter = colors.green(' %% ')
+
+prompt.start()
 
 prompt.get(schema, function (err, result) {
   if (err) {
