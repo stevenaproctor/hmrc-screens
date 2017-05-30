@@ -19,11 +19,24 @@ test('Creates a directory if it doesn\'t exist', function (t) {
     })
 })
 
-test('Returns a directory if it exists', function (t) {
-  t.plan(1)
+test('Returns a directory if it already exists', function (t) {
+  var thisDir = __dirname
 
-  mkDir(__dirname)
+  mkDir(thisDir)
     .then(function (dir) {
-      t.equal(dir, __dirname)
+      t.equal(dir, thisDir)
+      t.end()
+    })
+})
+
+test('Throws an error for an existing directory if given a message', function (t) {
+  var thisDir = __dirname
+  var errorMsg = 'Choose another directory name'
+
+  mkDir(thisDir, errorMsg)
+    .catch(function (err) {
+      t.ok(err instanceof Error)
+      t.equal(err.message, errorMsg)
+      t.end()
     })
 })
