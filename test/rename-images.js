@@ -17,9 +17,9 @@ test('Sorts the images by creation date and renames them', function (t) {
   })
 
   var renamedImages = [
-    '1-about-blank-Laptop-with-HiDPI-screen.png',
-    '2-about-blank-iPad-Landscape.png',
-    '3-about-blank-iPhone-6-Portrait.png'
+    '01-about-blank-Laptop-with-HiDPI-screen.png',
+    '02-about-blank-iPad-Landscape.png',
+    '03-about-blank-iPhone-6-Portrait.png'
   ]
 
   renameImages(images)
