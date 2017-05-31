@@ -19,7 +19,7 @@ var copyRecursiveSync = function (src, dest) {
   }
 }
 
-test.only('Sorts the images by creation date and renames them', function (t) {
+test('Sorts the images by creation date and renames them', function (t) {
   var imagesDir = path.join(__dirname, 'images')
   var imagesDirCopy = path.join(__dirname, 'images-test')
 
@@ -38,7 +38,6 @@ test.only('Sorts the images by creation date and renames them', function (t) {
 
   renameImages(images)
     .then(function (images) {
-
       t.deepEqual(images, renamedImages)
 
       cleanup(imagesDirCopy)
