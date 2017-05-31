@@ -31,14 +31,15 @@ test.only('Sorts the images by creation date and renames them', function (t) {
   })
 
   var renamedImages = [
-    '1-about-blank-iPad-Landscape.png',
-    '2-about-blank-Laptop-with-HiDPI-screen.png',
+    '1-about-blank-Laptop-with-HiDPI-screen.png',
+    '2-about-blank-iPad-Landscape.png',
     '3-about-blank-iPhone-6-Portrait.png'
   ]
 
   renameImages(images)
     .then(function (images) {
-      t.equal(images, renamedImages)
+
+      t.deepEqual(images, renamedImages)
 
       cleanup(imagesDirCopy)
       t.end()
