@@ -2,7 +2,7 @@ var fs = require('fs')
 var path = require('path')
 var test = require('tape')
 var sinon = require('sinon')
-var prompt = require('prompt')
+var inquirer = require('inquirer')
 var cleanup = require('./utils/cleanup')
 var getFile = require('./utils/get-file')
 var createService = require('../lib/create-service')
@@ -18,8 +18,8 @@ test('Create a directory for a new service', function (t) {
   var dataFile = path.join(testDirPath, 'data.js')
 
   sinon.stub(console, 'log')
-  sinon.stub(prompt, 'getInput').callsFake(function (prop, callback) {
-    callback(null, 'go')
+  sinon.stub(inquirer, 'prompt').callsFake(function (answers) {
+    return Promise.resolve(answers[0])
   })
 
   cleanup(servicesDir)

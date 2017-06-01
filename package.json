@@ -19,10 +19,11 @@
     "test:watch": "nodemon -q --exec 'npm run test' --ignore **/service/",
     "lint": "standard '*.js' 'lib/**/*.js' 'test/**/*.js' --fix"
   },
+  "dependencies": {
+    "inquirer": "^3.0.6"
+  },
   "devDependencies": {
-    "colors": "^1.1.2",
     "nodemon": "^1.11.0",
-    "prompt": "^1.0.0",
     "rimraf": "^2.6.1",
     "sinon": "^2.3.1",
     "standard": "^10.0.2",

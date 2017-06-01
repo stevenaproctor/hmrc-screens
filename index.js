@@ -1,45 +1,67 @@
+var fs = require('fs')
 var path = require('path')
-var prompt = require('prompt')
-var colors = require('colors/safe')
+var inquirer = require('inquirer')
 var mkDir = require('./lib/mkdir')
 var createService = require('./lib/create-service')
 
 var servicesDir = path.join(__dirname, 'service')
 
-var schema = {
-  properties: {
-    serviceName: {
-      description: colors.green('What is the service called?'),
-      message: colors.red('We need the name of your service so we can create it'),
-      required: true
-    },
-    scenarioName: {
-      description: colors.green('Enter the name of the scenario for this service')
-    },
-    directoryName: {
-      description: colors.green('Please enter a new directory name for this service')
-    }
-  }
+var getServices = function () {
+  return new Promise(function (resolve, reject) {
+    fs.readdir(servicesDir, function (err, files) {
+      if (err) {
+        reject(err)
+      }
+
+      files = files.filter(function (file) {
+        var stats = fs.statSync(path.join(servicesDir, file))
+        return stats.isDirectory()
+      }).map(function (service) {
+        return service.replace(/-/g, ' ').replace(/\w\S*/g, function (txt) {
+          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+        })
+      }).concat([
+        new inquirer.Separator(),
+        'Create a new service',
+        new inquirer.Separator()
+      ])
+
+      resolve(files)
+    })
+  })
 }
 
-prompt.message = colors.yellow('Question!')
-prompt.delimiter = colors.green(' %% ')
-
-prompt.start()
-
-prompt.get(schema, function (err, result) {
-  if (err) {
-    console.log('Sorry there was an error.', err)
-    process.exit(1)
+inquirer.prompt([
+  {
+    type: 'list',
+    name: 'serviceName',
+    message: 'Choose a service or create a new one:',
+    choices: getServices,
+    paginated: true
+  },
+  {
+    type: 'input',
+    name: 'serviceName',
+    message: 'What\'s the name of your service?',
+    when: function (answers) {
+      return answers.serviceName === 'Create a new service'
+    }
+  },
+  {
+    type: 'input',
+    name: 'scenarioName',
+    message: 'What\'s the name of your scenario?'
   }
-
+]).then(function (answers) {
   mkDir(servicesDir)
     .then(function (servicesDir) {
       createService(
         servicesDir,
-        result.directoryName,
-        result.scenarioName,
-        result.serviceName
+        answers.serviceName.replace(/ /g, '-').toLowerCase(),
+        answers.serviceName,
+        answers.scenarioName
       )
     })
+}).catch(function (err) {
+  console.log(err)
 })
