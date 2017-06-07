@@ -8,7 +8,7 @@ var getFile = require('./utils/get-file')
 var createService = require('../lib/create-service')
 
 test('Create a directory for a new service', function (t) {
-  t.plan(3)
+  t.plan(4)
 
   var servicesDir = path.join(__dirname, 'service')
   var testDir = 'test-directory'
@@ -35,6 +35,9 @@ test('Create a directory for a new service', function (t) {
       t.true(serviceDir.includes('images'), 'with an images directory')
       t.true(serviceDir.includes('index.html'), 'with an index.html file')
       t.true(serviceDir.includes('data.js'), 'with a data.js file')
+
+      var scenarioDir = fs.readdirSync(path.join(testDirPath, 'images'))
+      t.true(scenarioDir.includes(testScenario), 'with a scenario directory')
 
       cleanup(servicesDir)
     }

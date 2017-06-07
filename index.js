@@ -31,7 +31,7 @@ var getServices = function () {
   })
 }
 
-inquirer.prompt([
+var questions = [
   {
     type: 'list',
     name: 'serviceName',
@@ -52,7 +52,9 @@ inquirer.prompt([
     name: 'scenarioName',
     message: 'What\'s the name of your scenario?'
   }
-]).then(function (answers) {
+]
+
+inquirer.prompt(questions).then(function (answers) {
   mkDir(servicesDir)
     .then(function (servicesDir) {
       createService(

@@ -20,7 +20,8 @@
     "lint": "standard '*.js' 'lib/**/*.js' 'test/**/*.js' --fix"
   },
   "dependencies": {
-    "inquirer": "^3.0.6"
+    "inquirer": "^3.0.6",
+    "colors": "^1.1.2"
   },
   "devDependencies": {
     "nodemon": "^1.11.0",

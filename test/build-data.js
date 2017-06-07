@@ -6,7 +6,7 @@ var cleanup = require('./utils/cleanup')
 var getFile = require('./utils/get-file')
 var buildData = require('../lib/build-data')
 
-test('Create a data file for a service', function (t) {
+test('Create a data file for a new service', function (t) {
   t.plan(1)
 
   var testDir = path.join(__dirname, 'service')
@@ -25,7 +25,7 @@ test('Create a data file for a service', function (t) {
       'title': testScenario,
       'path': [{
         'caption': 'test image for a test service',
-        'imgref': 'images/' + files[1],
+        'imgref': 'images/' + testScenario + '/' + files[1],
         'note': 'Notes go here...'
       }]
     }]
