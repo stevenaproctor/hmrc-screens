@@ -3,7 +3,6 @@ var path = require('path')
 var test = require('tape')
 var sinon = require('sinon')
 var cleanup = require('./utils/cleanup')
-var getFile = require('./utils/get-file')
 var buildData = require('../lib/build-data')
 
 test('Create a data file for a new service', function (t) {
@@ -35,18 +34,15 @@ test('Create a data file for a new service', function (t) {
   fs.mkdirSync(testDir)
 
   sinon.stub(console, 'log')
-  buildData(files, testDir, testService, testScenario)
 
-  getFile(path.join(testDir, 'data.js'), function (file) {
-    if (file) {
-      console.log.restore()
+  buildData(files, testDir, testService, testScenario).then(function (filePath) {
+    console.log.restore()
 
-      var dataContents = fs.readFileSync(file).toString()
-      const expectedContents = 'var data = ' + JSON.stringify(data, null, 2)
+    var dataContents = fs.readFileSync(filePath).toString()
+    const expectedContents = 'var data = ' + JSON.stringify(data, null, 2)
 
-      t.equal(dataContents, expectedContents, 'with a data object built from args')
+    t.equal(dataContents, expectedContents, 'with a data object built from args')
 
-      cleanup(testDir)
-    }
+    cleanup(testDir)
   })
 })
