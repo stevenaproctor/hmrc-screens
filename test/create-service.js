@@ -11,10 +11,11 @@ test('Create a directory for a new service', function (t) {
   t.plan(4)
 
   var servicesDir = path.join(__dirname, 'service')
-  var testDir = 'test-directory'
-  var testService = 'test-service'
-  var testScenario = 'test-scenario'
-  var testDirPath = path.join(servicesDir, testDir)
+  var testService = 'Test Service'
+  var testScenario = 'Test Scenario'
+  var testServiceDir = testService.replace(/ /g, '-').toLowerCase()
+  var testScenarioDir = testScenario.replace(/ /g, '-').toLowerCase()
+  var testDirPath = path.join(servicesDir, testServiceDir)
   var dataFile = path.join(testDirPath, 'data.js')
 
   sinon.stub(console, 'log')
@@ -25,19 +26,20 @@ test('Create a directory for a new service', function (t) {
   cleanup(servicesDir)
   fs.mkdirSync(servicesDir)
 
-  createService(servicesDir, testDir, testService, testScenario)
+  createService(servicesDir, testService, testScenario)
 
   getFile(dataFile, function (file) {
     if (file) {
       console.log.restore()
+      inquirer.prompt.restore()
+
       var serviceDir = fs.readdirSync(testDirPath)
+      var scenarioDir = fs.readdirSync(path.join(testDirPath, 'images'))
 
       t.true(serviceDir.includes('images'), 'with an images directory')
       t.true(serviceDir.includes('index.html'), 'with an index.html file')
       t.true(serviceDir.includes('data.js'), 'with a data.js file')
-
-      var scenarioDir = fs.readdirSync(path.join(testDirPath, 'images'))
-      t.true(scenarioDir.includes(testScenario), 'with a scenario directory')
+      t.true(scenarioDir.includes(testScenarioDir), 'with a scenario directory')
 
       cleanup(servicesDir)
     }

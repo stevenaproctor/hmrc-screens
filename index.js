@@ -59,7 +59,6 @@ inquirer.prompt(questions).then(function (answers) {
     .then(function (servicesDir) {
       createService(
         servicesDir,
-        answers.serviceName.replace(/ /g, '-').toLowerCase(),
         answers.serviceName,
         answers.scenarioName
       )
