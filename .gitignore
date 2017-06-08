@@ -9,5 +9,6 @@ zeus.json
 .Trashes
 .fseventsd
 Icon?
+npm-debug.log
 node_modules/
 test/service/
