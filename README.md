@@ -40,7 +40,7 @@ Return to the command line and hit enter. Your screenshots will be renamed and o
 
 Add a link to your service in 'index.html' in the root of the app.
 
-We are planning to do this automatically in the future.
+We are planning to do this step automatically in the future.
 
 ## Capturing screenshots
 
