@@ -1,7 +1,7 @@
 HMRC screens
 ================
 
-Browse screenshots of Agent Services, organised by user scenario.
+Browse screenshots of HMRC Services, organised by user scenario.
 
 [http://hmrc.github.io/hmrc-screens/](http://hmrc.github.io/hmrc-screens/)
 
@@ -10,9 +10,39 @@ You can view different sets of screenshots for each service, zoom in and out of 
 
 ## Running this app locally
 
-The app is very simple and doesn't require anything to be installed or run in a terminal. Just open the index.html file in the root folder. It works especially well in Chrome's presentation mode. Your mileage may vary in other browsers.
+The app is very simple. You can view screens locally if you need to. Just open the index.html file in the root folder. It works especially well in Chrome's presentation mode. Your mileage may vary in other browsers.
 
-### Capturing screenshots
+## How to contribute
+
+Adding screens is a great way for other people to see how you've solved a problem and will allow us to keep consistency and identify design patterns in services. Production services are better than prototypes as they show us what s in production which is not always easy to see if services require authentication.
+
+Pull requests are the best way to contribute. You'll need to know how to use Git.
+
+## Option 01
+
+Using the CLI you can create a service and add screenshots you have taken scenario by scenario. The prompts in the CLI are straightforward to follow, but they are described below.
+
+### 1. Navigate to the root directory and type 'node index' and follow the prompts
+
+You will be give a list of the services that are already in the app and an option to add a new service.
+
+To add a new scenario to an existing service select the name of the service and hit enter. You will be asked for the name of the scenario.
+
+To add a new service select 'Create a new service' and hit enter. You will be asked for the name of the service.
+
+### 2. Add your images
+
+Each service has it's own folder in '/service'. Drop all your images into the 'images/scenario' subfolder (1024px wide is best).
+
+Return to the command line and hit enter. Your screenshots will be renamed and ordered in chronological order according to the date and time the files were created. This means that if you've captured the screens one after the other they will be in the correct order in the app.
+
+### 3. Add a link to the service 
+
+Add a link to your service in 'index.html' in the root of the app.
+
+We are planning to do this automatically in the future.
+
+## Capturing screenshots
 
 On OSX, [Paparazzi](https://derailer.org/paparazzi/) is the best way to capture screenshots. You can set the maximum and minimum widths for the screens, and can capture images in batches.
 
@@ -22,37 +52,15 @@ On Windows you can use the [Awesome Screenshot](https://chrome.google.com/websto
 
 You can also use services like [BrowserStack](http://www.browserstack.com/) or [Sauce Labs](https://saucelabs.com/) for automated serverside screenshot capture.
 
-## How to contribute
+## Future enhancements
 
-If you work on one of the exemplars and want to add or update screenshots of it please go ahead, you'd be doing us all a big favour. Pull requests are the best way. You'll need to know how to use Git and how to edit very simple data files.
+We plan to add more functionality to the app in the future to make it even easier to add screens to the app. 
 
-## Option 01
+These enhancements are:
 
-### 1. Add your images
-
-Each service has it's own folder in '/service'. Drop all your images into the 'images' subfolder (1024px wide is best).
-
-### 2. Update the data file
-
-Edit the data.js file in your numbered exemplar folder. It contains a few examples so you can see how the data should be structured.
-
-### 3. Update the index file
-
-Once you're done, don't forget to add a link to your service from the 'index.html' file in the root of this repository (not the one in your service folder).
-
-## Option 2
-
-## Build the JSON file dynamically 
-
-For this to work you will have to have all of the screenshots in a folder and they will need to be named correctly. To do this you can use the [Automator workflow](save-files-in-order.workflow). The woerkflow makes filenames web friendly, replaces spaces with `-` and sorts the files according to the date and time they were created. Giving you a logical journey providing you captured them in order in the same session.
-
-### 1. Navigate to the root directory and type 'node index.js' and follow the prompts
-### 2. Enter your service name
-### 3. Enter your service title
-### 4. Enter the new folder name
-### 5. Paste your images in the new folder and type 'go'
-
-You should have a new JSON file called 'data.js' in your new folder so now navigate to the html file and you should have everything populated.
+* add notes to each screen in the UI of the app
+* take screenshots through the app
+* rearrange screens in the app 
 
 
 
