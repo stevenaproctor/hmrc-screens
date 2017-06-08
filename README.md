@@ -5,7 +5,7 @@ Browse screenshots of HMRC Services, organised by user scenario.
 
 [http://hmrc.github.io/hmrc-screens/](http://hmrc.github.io/hmrc-screens/)
 
-You can view user journeys for each service as an overview in detail and out of them or step through them in order.
+You can view screenshots of user journeys for each service as an overview or in detail and step through them in order.
 
 ## Running the app locally
 
