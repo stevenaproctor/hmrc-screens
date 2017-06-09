@@ -25,7 +25,7 @@ Using the command line tool you can create a service and add screenshots you hav
 
 ### 1. Run the tool
 
-1. Open your terminal and navigate to the root directory
+1. Open your terminal and navigate to the root folder
 2. Type `npm start`
 3. Follow the prompts
 
@@ -37,7 +37,7 @@ To add a new service select 'Create a new service' and hit enter. You will be as
 
 ### 2. Add your images
 
-Each service has it's own folder in [`/service`](https://github.com/hmrc/hmrc-screens/tree/gh-pages/service). Drop all your images into the scenario folder that was just created in the service's `images` directory.
+Each service has it's own folder in [`/service`](https://github.com/hmrc/hmrc-screens/tree/gh-pages/service). Drop all your images into the scenario folder that was just created in the service's `images` folder.
 
 Return to the command line and hit enter. Your screenshots will be renamed (to make them safe for the web) and ordered chronologically according to the date and time the files were created. This means that if you've captured the screens one after the other while navigating through a journey they will be in the correct order in the app.
 
