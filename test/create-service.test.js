@@ -4,7 +4,6 @@ var test = require('tape')
 var sinon = require('sinon')
 var inquirer = require('inquirer')
 var cleanup = require('./utils/cleanup')
-var getFile = require('./utils/get-file')
 var createService = require('../lib/create-service')
 
 test('Create a directory for a new service', function (t) {
@@ -16,7 +15,6 @@ test('Create a directory for a new service', function (t) {
   var testServiceDir = testService.replace(/ /g, '-').toLowerCase()
   var testScenarioDir = testScenario.replace(/ /g, '-').toLowerCase()
   var testDirPath = path.join(servicesDir, testServiceDir)
-  var dataFile = path.join(testDirPath, 'data.js')
   var rootIndexPage = path.join(__dirname, '..', 'index.html')
   var testIndexPage = path.join(__dirname, 'index.html')
 
@@ -34,9 +32,7 @@ test('Create a directory for a new service', function (t) {
   fs.writeFileSync(testIndexPage, indexFile)
 
   createService(servicesDir, testService, testScenario)
-
-  getFile(dataFile, function (file) {
-    if (file) {
+    .then(function () {
       console.log.restore()
       inquirer.prompt.restore()
 
@@ -50,6 +46,5 @@ test('Create a directory for a new service', function (t) {
 
       cleanup(servicesDir)
       cleanup(testIndexPage)
-    }
-  })
+    })
 })
