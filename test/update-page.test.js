@@ -5,7 +5,7 @@ var cheerio = require('cheerio')
 var cleanup = require('./utils/cleanup')
 var updatePage = require('../lib/update-page')
 
-test.only('Updates the root index page with a link', function (t) {
+test('Updates the root index page with a link', function (t) {
   t.plan(3)
 
   var serviceName = 'Test Service'
