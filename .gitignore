@@ -12,3 +12,4 @@ Icon?
 npm-debug.log
 node_modules/
 test/service/
+test/index.html

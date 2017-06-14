@@ -17,6 +17,8 @@ test('Create a directory for a new service', function (t) {
   var testScenarioDir = testScenario.replace(/ /g, '-').toLowerCase()
   var testDirPath = path.join(servicesDir, testServiceDir)
   var dataFile = path.join(testDirPath, 'data.js')
+  var rootIndexPage = path.join(__dirname, '..', 'index.html')
+  var testIndexPage = path.join(__dirname, 'index.html')
 
   sinon.stub(console, 'log')
   sinon.stub(inquirer, 'prompt').callsFake(function (answers) {
@@ -24,7 +26,12 @@ test('Create a directory for a new service', function (t) {
   })
 
   cleanup(servicesDir)
+  cleanup(testIndexPage)
+
   fs.mkdirSync(servicesDir)
+
+  var indexFile = fs.readFileSync(rootIndexPage)
+  fs.writeFileSync(testIndexPage, indexFile)
 
   createService(servicesDir, testService, testScenario)
 
@@ -42,6 +49,7 @@ test('Create a directory for a new service', function (t) {
       t.true(scenarioDir.includes(testScenarioDir), 'with a scenario directory')
 
       cleanup(servicesDir)
+      cleanup(testIndexPage)
     }
   })
 })

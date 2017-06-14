@@ -30,6 +30,7 @@ test('Sorts the images by creation date and renames them', function (t) {
       t.end()
     })
     .catch(function (err) {
+      cleanup(imagesDirCopy)
       t.end(err)
     })
 })
