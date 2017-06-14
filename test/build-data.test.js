@@ -6,9 +6,9 @@ var cleanup = require('./utils/cleanup')
 var buildData = require('../lib/build-data')
 
 var testDir = path.join(__dirname, 'service')
-var testService = 'test-service'
-var testScenario = 'test-scenario'
-var testScenarioTwo = 'test-scenario-two'
+var testService = 'Test Service'
+var testScenario = 'Test Scenario'
+var testScenarioTwo = 'Test Scenario Two'
 
 var files = [
   'not-an-image.txt',
@@ -25,7 +25,7 @@ test('Create a data file for a new service', function (t) {
       'title': testScenario,
       'path': [{
         'caption': 'test image for a test service',
-        'imgref': 'images/' + testScenario + '/' + files[1],
+        'imgref': 'images/test-scenario/' + files[1],
         'note': 'Notes go here...'
       }]
     }]
@@ -59,7 +59,7 @@ test('Create a data file for a new scenario in an existing service', function (t
       'title': testScenario,
       'path': [{
         'caption': 'test image for a test service',
-        'imgref': 'images/' + testScenario + '/' + files[1],
+        'imgref': 'images/test-scenario/' + files[1],
         'note': 'Notes go here...'
       }]
     },
@@ -67,7 +67,7 @@ test('Create a data file for a new scenario in an existing service', function (t
       'title': testScenarioTwo,
       'path': [{
         'caption': 'test image for a test service',
-        'imgref': 'images/' + testScenarioTwo + '/' + files[1],
+        'imgref': 'images/test-scenario-two/' + files[1],
         'note': 'Notes go here...'
       }]
     }]
