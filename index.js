@@ -51,6 +51,12 @@ var questions = [
   }
 ]
 
+var wait = [{
+  type: 'input',
+  name: 'build',
+  message: 'Move your images to the newly created folder. Hit enter when you\'re done'
+}]
+
 inquirer
   .prompt(questions)
   .then(function (answers) {
@@ -69,11 +75,7 @@ inquirer
       .then(function (scenarioDir) {
         console.log(colors.blue('Your new scenario is ready: ' + path.resolve(scenarioDir)))
 
-        return inquirer.prompt([{
-          type: 'input',
-          name: 'build',
-          message: 'Move your images to the newly created folder. Hit enter when you\'re done'
-        }])
+        return inquirer.prompt(wait)
       })
       .then(function () {
         return getImages(serviceDir, serviceName, scenarioName)
