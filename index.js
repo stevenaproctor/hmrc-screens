@@ -22,6 +22,10 @@ var listServices = function () {
     })
 }
 
+var notEmpty = function (answer) {
+  return (!answer) ? 'You must provide a name' : true
+}
+
 var questions = [
   {
     type: 'list',
@@ -36,12 +40,14 @@ var questions = [
     message: 'What\'s the name of your service?',
     when: function (answers) {
       return answers.serviceName === 'Create a new service'
-    }
+    },
+    validate: notEmpty
   },
   {
     type: 'input',
     name: 'scenarioName',
-    message: 'What\'s the name of your scenario?'
+    message: 'What\'s the name of your scenario?',
+    validate: notEmpty
   }
 ]
 
