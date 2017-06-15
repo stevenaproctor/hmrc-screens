@@ -5,41 +5,52 @@ Browse screenshots of HMRC Services, organised by user scenario.
 
 [http://hmrc.github.io/hmrc-screens/](http://hmrc.github.io/hmrc-screens/)
 
-You can view screenshots of user journeys for each service as an overview or in detail and step through them in order.
+You can view user journeys for each service as an overview, or select a screen for more detail and then step through them in order.
 
 ## Running the app locally
 
-The app is very simple. You can view screens locally just by opening the root folder's `index.html` in a browser. It works especially well in Chrome's presentation mode. Your mileage may vary in other browsers.
+The app is very simple. You can view screens locally by opening the root folder, `index.html`, in a browser. 
+ 
+It works especially well in Chrome's presentation mode. Your experience may vary in other browsers.
 
 ## How to contribute your screens
 
-Adding screens is a great way for other people to see your user journeys and how you've solved a problem. It also helps us to identify design patterns in services and keep consistency of those patterns between services. 
-
-Screenshots of production services are better than prototypes as they show us what's seen by our users. However, it's not always easy to screenshot these services if they require authentication.
-
-Pull requests are the best way to contribute. You'll need to know how to use Git.
+Adding your screens is a great way to showcase the problems you've solved. It also allows us to ensure consistency across the services and identify design patterns. 
+ 
+Screenshots of production services are better than prototypes as they show what’s currently seen by our users. Also, it’s not easy to screenshot a service that requires authentication.
+ 
+Creating pull requests are the best way to contribute. So, you'll need to know how to use GitHub.
 
 ## Option 01
 
-Using the command line tool you can create a service and add screenshots you have taken scenario by scenario. The prompts in the CLI are straightforward to follow, but they are described below.
+Using the command line tool (CLI), you can create a service and add screenshots you’ve taken, scenario by scenario. The prompts in the CLI are straightforward:
 
 ### 1. Run the tool
 
-1. Open your terminal and navigate to the root folder
-2. Type `npm start`
-3. Follow the prompts
+1. Open your terminal
+2. Navigate to the root directory
+3. Type `npm start`
+4. Follow the prompts
 
-You will be given a list of the services that are already in the app and the option to add a new service.
-
-To add a new scenario to an existing service, select the name of the service from the list and hit enter. You will then be asked for the name of the scenario you want to add.
-
-To add a new service select 'Create a new service' and hit enter. You will be asked for the name of the service, then the name of the scenario to add to it.
+You’ll be given a list of the services that are already in the app and the option to add a new one.
+ 
+To add a new scenario to an existing service
+- Select the service from the list
+- Hit enter
+- Enter the name of the scenario
+ 
+To add a new service:
+- Select 'create a new service'
+- Hit enter
+- Enter the name of the service
+- Enter the name of the scenario
 
 ### 2. Add your images
 
-Each service has it's own folder in [`/service`](https://github.com/hmrc/hmrc-screens/tree/gh-pages/service). Drop all your images into the scenario folder that was just created in the service's `images` folder.
+Each service has its own folder in [`/service`](https://github.com/hmrc/hmrc-screens/tree/gh-pages/service). Add all your images into the scenario folder in the service's images directory.
+ 
+Return to the command line and hit enter. Your screenshots will be renamed (to make them web friendly) and ordered chronologically according to when they were created. This means that as you've captured the screens while navigating through a journey, they’ll be in the same order in the app.
 
-Return to the command line and hit enter. Your screenshots will be renamed (to make them safe for the web) and ordered chronologically according to the date and time the files were created. This means that if you've captured the screens one after the other while navigating through a journey they will be in the correct order in the app.
 
 #### Capturing screenshots
 
@@ -52,11 +63,10 @@ On Windows you can use the [Awesome Screenshot](https://chrome.google.com/websto
 You can also use services like [BrowserStack](http://www.browserstack.com/) or [Sauce Labs](https://saucelabs.com/) for automated serverside screenshot capture.
 
 ## Future enhancements
+We plan to add more functionality to the app to make it even easier to take screenshots and add them to the app. 
+ 
+Through the UI, you’ll be able to:
+- add notes to each screen 
+- rearrange the screens 
+- take screenshots 
 
-We plan to add more functionality to the app in the future to make it even easier to take screenshots and add screens to the app. 
-
-These enhancements are:
-
-* add notes to each screen through the app's UI
-* rearrange screens through the app's UI
-* take screenshots through the app's UI
