@@ -1,8 +1,6 @@
 var fs = require('fs')
 var path = require('path')
 var test = require('tape')
-var sinon = require('sinon')
-var inquirer = require('inquirer')
 var cleanup = require('./utils/cleanup')
 var createService = require('../lib/create-service')
 
@@ -11,17 +9,10 @@ test('Create a directory for a new service', function (t) {
 
   var servicesDir = path.join(__dirname, 'service')
   var testService = 'Test Service'
-  var testScenario = 'Test Scenario'
   var testServiceDir = testService.replace(/ /g, '-').toLowerCase()
-  var testScenarioDir = testScenario.replace(/ /g, '-').toLowerCase()
   var testDirPath = path.join(servicesDir, testServiceDir)
   var rootIndexPage = path.join(__dirname, '..', 'index.html')
   var testIndexPage = path.join(__dirname, 'index.html')
-
-  sinon.stub(console, 'log')
-  sinon.stub(inquirer, 'prompt').callsFake(function (answers) {
-    return Promise.resolve(answers[0])
-  })
 
   cleanup(servicesDir)
   cleanup(testIndexPage)
@@ -31,18 +22,14 @@ test('Create a directory for a new service', function (t) {
   var indexFile = fs.readFileSync(rootIndexPage)
   fs.writeFileSync(testIndexPage, indexFile)
 
-  createService(servicesDir, testService, testScenario)
-    .then(function () {
-      console.log.restore()
-      inquirer.prompt.restore()
+  createService(servicesDir, testService)
+    .then(function (serviceDir) {
+      var serviceDirContents = fs.readdirSync(testDirPath)
 
-      var serviceDir = fs.readdirSync(testDirPath)
-      var scenarioDir = fs.readdirSync(path.join(testDirPath, 'images'))
-
-      t.true(serviceDir.includes('images'), 'with an images directory')
-      t.true(serviceDir.includes('index.html'), 'with an index.html file')
-      t.true(serviceDir.includes('data.js'), 'with a data.js file')
-      t.true(scenarioDir.includes(testScenarioDir), 'with a scenario directory')
+      t.equal(serviceDirContents.length, 2, 'with 2 things in it')
+      t.true(serviceDirContents.includes('images'), 'an images directory')
+      t.true(serviceDirContents.includes('index.html'), 'and an index.html file')
+      t.equal(serviceDir, path.join(servicesDir, 'test-service'), 'and returns the new service path')
 
       cleanup(servicesDir)
       cleanup(testIndexPage)
