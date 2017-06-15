@@ -33,7 +33,7 @@ test('Updates the root index page with a link', function (t) {
       t.equal($('.exemplar-list li').length, listLength + 1, 'only adds one link at a time')
       t.equal($.html('.exemplar-list li:last-child'), link, 'with a relative url to the new service')
 
-      return Promise.resolve(true)
+      return true
     })
     .then(function () {
       return updatePage(testIndexPage, serviceName, serviceDir)
