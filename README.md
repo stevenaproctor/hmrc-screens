@@ -9,13 +9,13 @@ You can view user journeys for each service as an overview, or select a screen f
 
 ## Running the app locally
 
-The app is very simple. You can view screens locally by opening the root folder, `index.html`, in a browser. 
+The app is very simple. You can view screens locally by opening the root `index.html` file in a browser. 
  
 It works especially well in Chrome's presentation mode. Your experience may vary in other browsers.
 
 ## How to contribute your screens
 
-Adding your screens is a great way to showcase the problems you've solved. It also allows us to ensure consistency across the services and identify design patterns. 
+Adding your screens is a great way to showcase the problems you've solved. It also allows us to ensure consistency across all our services and helps to identify design patterns. 
  
 Screenshots of production services are better than prototypes as they show what’s currently seen by our users. Also, it’s not easy to screenshot a service that requires authentication.
  
