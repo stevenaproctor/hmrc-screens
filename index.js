@@ -1,4 +1,5 @@
 var path = require('path')
+var colors = require('colors/safe')
 var inquirer = require('inquirer')
 var mkDir = require('./lib/mkdir')
 var getServices = require('./lib/get-services')
@@ -40,15 +41,18 @@ var questions = [
   }
 ]
 
-inquirer.prompt(questions).then(function (answers) {
-  mkDir(servicesDir)
-    .then(function (servicesDir) {
-      createService(
-        servicesDir,
-        answers.serviceName,
-        answers.scenarioName
-      )
-    })
-}).catch(function (err) {
-  console.log(err)
-})
+inquirer
+  .prompt(questions)
+  .then(function (answers) {
+    return mkDir(servicesDir)
+      .then(function (servicesDir) {
+        return createService(
+          servicesDir,
+          answers.serviceName,
+          answers.scenarioName
+        )
+      })
+  })
+  .catch(function (err) {
+    console.log(colors.red(err))
+  })
