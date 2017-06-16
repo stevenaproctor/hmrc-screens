@@ -4,6 +4,7 @@ var test = require('tape')
 var sinon = require('sinon')
 var cleanup = require('./utils/cleanup')
 var buildData = require('../lib/build-data')
+var moment = require('moment')
 
 var testDir = path.join(__dirname, 'service')
 var testService = 'Test Service'
@@ -20,7 +21,7 @@ test('Create a data file for a new service', function (t) {
 
   var data = {
     'service': testService,
-    'last-updated': 'Some date',
+    'last-updated': moment().format('Do MMMM YYYY'),
     'userjourneys': [{
       'title': testScenario,
       'path': [{
@@ -54,7 +55,7 @@ test('Create a data file for a new scenario in an existing service', function (t
 
   var data = {
     'service': testService,
-    'last-updated': 'Some date',
+    'last-updated': moment().format('Do MMMM YYYY'),
     'userjourneys': [{
       'title': testScenario,
       'path': [{
