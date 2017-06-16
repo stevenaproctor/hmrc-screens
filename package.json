@@ -25,6 +25,7 @@
     "inquirer": "^3.0.6"
   },
   "devDependencies": {
+    "moment": "^2.18.1",
     "nodemon": "^1.11.0",
     "rimraf": "^2.6.1",
     "sinon": "^2.3.1",
