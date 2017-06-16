@@ -29,9 +29,9 @@ Using the command line tool (CLI), you can create a service and add screenshots 
 
 1. Open your terminal
 2. Navigate to the root directory
-2a. If this is the first time you've run the tool you'll have to run `npm install`
-3. Type `npm start`
-4. Follow the prompts
+3. If this is the first time you've run the tool you'll have to run `npm install`
+4. Type `npm start`
+5. Follow the prompts
 
 You’ll be given a list of the services that are already in the app and the option to add a new one.
  
