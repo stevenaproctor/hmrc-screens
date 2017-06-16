@@ -60,8 +60,8 @@ var wait = [{
 inquirer
   .prompt(questions)
   .then(function (answers) {
-    var serviceName = answers.serviceName
-    var scenarioName = answers.scenarioName
+    var serviceName = answers.serviceName.trim()
+    var scenarioName = answers.scenarioName.trim()
     var serviceDir = path.join(servicesDir, serviceName.replace(/ +/g, '-').toLowerCase())
 
     return mkDir(servicesDir)
