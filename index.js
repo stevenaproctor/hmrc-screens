@@ -22,6 +22,10 @@ var listServices = function () {
     })
 }
 
+var notEmpty = function (answer) {
+  return (!answer) ? 'You must provide a name' : true
+}
+
 var questions = [
   {
     type: 'list',
@@ -36,14 +40,22 @@ var questions = [
     message: 'What\'s the name of your service?',
     when: function (answers) {
       return answers.serviceName === 'Create a new service'
-    }
+    },
+    validate: notEmpty
   },
   {
     type: 'input',
     name: 'scenarioName',
-    message: 'What\'s the name of your scenario?'
+    message: 'What\'s the name of your scenario?',
+    validate: notEmpty
   }
 ]
+
+var wait = [{
+  type: 'input',
+  name: 'build',
+  message: 'Move your images to the newly created folder. Hit enter when you\'re done'
+}]
 
 inquirer
   .prompt(questions)
@@ -63,11 +75,7 @@ inquirer
       .then(function (scenarioDir) {
         console.log(colors.blue('Your new scenario is ready: ' + path.resolve(scenarioDir)))
 
-        return inquirer.prompt([{
-          type: 'input',
-          name: 'build',
-          message: 'Move your images to the newly created folder. Hit enter when you\'re done'
-        }])
+        return inquirer.prompt(wait)
       })
       .then(function () {
         return getImages(serviceDir, serviceName, scenarioName)
