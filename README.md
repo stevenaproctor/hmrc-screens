@@ -23,6 +23,8 @@ Creating pull requests are the best way to contribute. So, you'll need to know h
 
 ## Option 01
 
+You'll need to have node installed to contribute screens using this option
+
 Using the command line tool (CLI), you can create a service and add screenshots you’ve taken, scenario by scenario. The prompts in the CLI are straightforward:
 
 ### 1. Run the tool
