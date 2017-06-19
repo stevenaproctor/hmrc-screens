@@ -8,6 +8,7 @@ var updatePage = require('./lib/update-page')
 var renameImages = require('./lib/rename-images')
 var getServices = require('./lib/get-services')
 var createService = require('./lib/create-service')
+var validationUtil = require('./lib/utils/validation')
 
 var servicesDir = path.join(__dirname, 'service')
 
@@ -20,10 +21,6 @@ var listServices = function () {
         new inquirer.Separator()
       ])
     })
-}
-
-var notEmpty = function (answer) {
-  return (!answer) ? 'You must provide a name' : true
 }
 
 var questions = [
@@ -41,13 +38,15 @@ var questions = [
     when: function (answers) {
       return answers.serviceName === 'Create a new service'
     },
-    validate: notEmpty
+    validate: validationUtil.isPopulated
   },
   {
     type: 'input',
     name: 'scenarioName',
     message: 'What\'s the name of your scenario?',
-    validate: notEmpty
+    validate: function (scenarioName, answers) {
+      return validationUtil.validateScenarioName(servicesDir, scenarioName, answers.serviceName)
+    }
   }
 ]
 
