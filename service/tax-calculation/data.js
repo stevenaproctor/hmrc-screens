@@ -1,9 +1,244 @@
 var data = {
-  "service": "Tax Calculation",
+  "service": "Tax Calculation  Other",
   "last-updated": "Some date",
   "userjourneys": [
+     {
+      "title": "Overpayment - Overpayment - Available without supplement",
+      "path": [
+        {
+          "caption": "check income tax last year",
+          "imgref": "images/available-without-supplement/02-check-income-tax-last-year.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "paid too much",
+          "imgref": "images/available-without-supplement/03-paid-too-much.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "why you owe tax",
+          "imgref": "images/available-without-supplement/01-why-you-owe-tax.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "calculation summary",
+          "imgref": "images/available-without-supplement/04-calculation-summary.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "get your refund",
+          "imgref": "images/available-without-supplement/05-get-your-refund.png",
+          "note": "Notes go here..."
+        }
+      ]
+    },
     {
-      "title": "Coded out Eligible",
+      "title": "Overpayment - Overpayment - Processing without supplement",
+      "path": [
+        {
+          "caption": "check income tax last year",
+          "imgref": "images/processing-without-supplement/02-check-income-tax-last-year.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "paid too much",
+          "imgref": "images/processing-without-supplement/03-paid-too-much.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "why you owe tax",
+          "imgref": "images/processing-without-supplement/04-why-you-owe-tax.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "calculation summary",
+          "imgref": "images/processing-without-supplement/01-calculation-summary.png",
+          "note": "Notes go here..."
+        }
+      ]
+    },
+    {
+      "title": "Overpayment - Overpayment - Cheque sent without supplement",
+      "path": [
+        {
+          "caption": "check income tax last year",
+          "imgref": "images/cheque-sent-without-supplement/02-check-income-tax-last-year.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "paid too much",
+          "imgref": "images/cheque-sent-without-supplement/03-paid-too-much.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "why you owe tax",
+          "imgref": "images/cheque-sent-without-supplement/04-why-you-owe-tax.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "calculation summary",
+          "imgref": "images/cheque-sent-without-supplement/01-calculation-summary.png",
+          "note": "Notes go here..."
+        }
+      ]
+    },
+    {
+      "title": "Overpayment - Overpayment - Claimed without supplement",
+      "path": [
+        {
+          "caption": "check income tax last year",
+          "imgref": "images/claimed-without-supplement/01-check-income-tax-last-year.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "paid too much",
+          "imgref": "images/claimed-without-supplement/02-paid-too-much.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "why you owe tax",
+          "imgref": "images/claimed-without-supplement/03-why-you-owe-tax.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "calculation summary",
+          "imgref": "images/claimed-without-supplement/04-calculation-summary.png",
+          "note": "Notes go here..."
+        }
+      ]
+    },
+    {
+      "title": "Overpayment - Overpayment - Not available without supplement",
+      "path": [
+        {
+          "caption": "check income tax last year",
+          "imgref": "images/not-available-without-supplement/02-check-income-tax-last-year.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "paid too much",
+          "imgref": "images/not-available-without-supplement/03-paid-too-much.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "why you owe tax",
+          "imgref": "images/not-available-without-supplement/04-why-you-owe-tax.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "calculation summary",
+          "imgref": "images/not-available-without-supplement/01-calculation-summary.png",
+          "note": "Notes go here..."
+        }
+      ]
+    },
+    {
+      "title": "Overpayment - Overpayment - Available with supplement",
+      "path": [
+        {
+          "caption": "check income tax last year",
+          "imgref": "images/available-with-supplement/01-check-income-tax-last-year.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "paid too much",
+          "imgref": "images/available-with-supplement/03-paid-too-much.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "why you owe tax",
+          "imgref": "images/available-with-supplement/04-why-you-owe-tax.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "get your refund",
+          "imgref": "images/available-with-supplement/02-get-your-refund.png",
+          "note": "Notes go here..."
+        }
+      ]
+    },
+    {
+      "title": "Overpayment - Overpayment - Processing with supplement",
+      "path": [
+        {
+          "caption": "check income tax last year",
+          "imgref": "images/processing-with-supplement/02-check-income-tax-last-year.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "paid too much",
+          "imgref": "images/processing-with-supplement/01-paid-too-much.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "why you owe tax",
+          "imgref": "images/processing-with-supplement/03-why-you-owe-tax.png",
+          "note": "Notes go here..."
+        }
+      ]
+    },
+    {
+      "title": "Overpayment - Cheque sent with supplement",
+      "path": [
+        {
+          "caption": "check income tax last year",
+          "imgref": "images/cheque-sent-with-supplement/02-check-income-tax-last-year.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "paid too much",
+          "imgref": "images/cheque-sent-with-supplement/01-paid-too-much.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "why you owe tax",
+          "imgref": "images/cheque-sent-with-supplement/03-why-you-owe-tax.png",
+          "note": "Notes go here..."
+        }
+      ]
+    },
+    {
+      "title": "Overpayment - Claimed with supplement",
+      "path": [
+        {
+          "caption": "check income tax last year",
+          "imgref": "images/claimed-with-supplement/02-check-income-tax-last-year.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "paid too much",
+          "imgref": "images/claimed-with-supplement/01-paid-too-much.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "why you owe tax",
+          "imgref": "images/claimed-with-supplement/03-why-you-owe-tax.png",
+          "note": "Notes go here..."
+        }
+      ]
+    },
+    {
+      "title": "Overpayment - Not available with supplement",
+      "path": [
+        {
+          "caption": "check income tax last year",
+          "imgref": "images/not-available-with-supplement/01-check-income-tax-last-year.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "paid too much",
+          "imgref": "images/not-available-with-supplement/02-paid-too-much.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "why you owe tax",
+          "imgref": "images/not-available-with-supplement/03-why-you-owe-tax.png",
+          "note": "Notes go here..."
+        }
+      ]
+    },
+    {
+      "title": "Underpayment - Coded out Eligible",
       "path": [
         {
           "caption": "check income tax last year",
@@ -28,7 +263,7 @@ var data = {
       ]
     },
     {
-      "title": "Coded out not eligible",
+      "title": "Underpayment - Coded out not eligible",
       "path": [
         {
           "caption": "check income tax last year",
@@ -48,7 +283,7 @@ var data = {
       ]
     },
     {
-      "title": "Collected not eligible",
+      "title": "Underpayment - Collected not eligible",
       "path": [
         {
           "caption": "check income tax last year",
@@ -68,7 +303,7 @@ var data = {
       ]
     },
     {
-      "title": "Outstanding eligible",
+      "title": "Underpayment - Outstanding eligible",
       "path": [
         {
           "caption": "check income tax last year",
@@ -93,7 +328,7 @@ var data = {
       ]
     },
     {
-      "title": "Outstanding not eligible",
+      "title": "Underpayment - Outstanding not eligible",
       "path": [
         {
           "caption": "check income tax last year",
@@ -113,7 +348,7 @@ var data = {
       ]
     },
     {
-      "title": "Part paid eligible",
+      "title": "Underpayment - Part paid eligible",
       "path": [
         {
           "caption": "check income tax last year",
@@ -138,7 +373,7 @@ var data = {
       ]
     },
     {
-      "title": "Part paid not eligible",
+      "title": "Underpayment - Part paid not eligible",
       "path": [
         {
           "caption": "check income tax last year",
@@ -158,7 +393,7 @@ var data = {
       ]
     },
     {
-      "title": "Part paid part coded eligible",
+      "title": "Underpayment - Part paid part coded eligible",
       "path": [
         {
           "caption": "check income tax last year",
@@ -183,7 +418,7 @@ var data = {
       ]
     },
     {
-      "title": "Part paid part coded not eligible",
+      "title": "Underpayment - Part paid part coded not eligible",
       "path": [
         {
           "caption": "check income tax last year",
@@ -203,7 +438,7 @@ var data = {
       ]
     },
     {
-      "title": "Help Journey: Coded - Amount wrong - P800",
+      "title": "Underpayment - Help Journey: Coded - Amount wrong - P800",
       "path": [
         {
           "caption": "check income tax last year",
@@ -238,7 +473,7 @@ var data = {
       ]
     },
     {
-      "title": "Help Journey: Coded - Amount wrong - TES",
+      "title": "Underpayment - Help Journey: Coded - Amount wrong - TES",
       "path": [
         {
           "caption": "check income tax last year",
@@ -273,7 +508,7 @@ var data = {
       ]
     },
     {
-      "title": "Help Journey: Coded - Cannot pay",
+      "title": "Underpayment - Help Journey: Coded - Cannot pay",
       "path": [
         {
           "caption": "check income tax last year",
@@ -303,7 +538,7 @@ var data = {
       ]
     },
     {
-      "title": "Help Journey: Coded - Payment not showing",
+      "title": "Underpayment - Help Journey: Coded - Payment not showing",
       "path": [
         {
           "caption": "check income tax last year",
@@ -333,7 +568,7 @@ var data = {
       ]
     },
     {
-      "title": "Help Journey: Paid in full - what to tell us - P800",
+      "title": "Underpayment - Help Journey: Paid in full - what to tell us - P800",
       "path": [
         {
           "caption": "check income tax last year",
@@ -363,7 +598,7 @@ var data = {
       ]
     },
     {
-      "title": "Help Journey: Paid in full - what to tell us - TES",
+      "title": "Underpayment - Help Journey: Paid in full - what to tell us - TES",
       "path": [
         {
           "caption": "check income tax last year",
@@ -393,7 +628,7 @@ var data = {
       ]
     },
     {
-      "title": "Help Journey: VPL - amount wrong - P800",
+      "title": "Underpayment - Help Journey: VPL - amount wrong - P800",
       "path": [
         {
           "caption": "check income tax last year",
@@ -428,7 +663,7 @@ var data = {
       ]
     },
     {
-      "title": "Help Journey: VPL - amount wrong - TES",
+      "title": "Underpayment - Help Journey: VPL - amount wrong - TES",
       "path": [
         {
           "caption": "check income tax last year",
@@ -463,7 +698,7 @@ var data = {
       ]
     },
     {
-      "title": "Help Journey: VPL - Cannot collect",
+      "title": "Underpayment - Help Journey: VPL - Cannot collect",
       "path": [
         {
           "caption": "check income tax last year",
@@ -488,7 +723,7 @@ var data = {
       ]
     },
     {
-      "title": "Help Journey: VPL - Cannot pay",
+      "title": "Underpayment - Help Journey: VPL - Cannot pay",
       "path": [
         {
           "caption": "check income tax last year",
@@ -518,7 +753,7 @@ var data = {
       ]
     },
     {
-      "title": "Help Journey: VPL - Payment not showing",
+      "title": "Underpayment - Help Journey: VPL - Payment not showing",
       "path": [
         {
           "caption": "check income tax last year",
@@ -548,7 +783,7 @@ var data = {
       ]
     },
     {
-      "title": "Payment Journey: Choose payment - Full",
+      "title": "Underpayment - Payment Journey: Choose payment - Full",
       "path": [
         {
           "caption": "check income tax last year",
@@ -583,7 +818,7 @@ var data = {
       ]
     },
     {
-      "title": "Payment Journey: Choose payment - Part",
+      "title": "Underpayment - Payment Journey: Choose payment - Part",
       "path": [
         {
           "caption": "check income tax last year",
@@ -613,7 +848,7 @@ var data = {
       ]
     },
     {
-      "title": "Payment Journey: Pay full amount",
+      "title": "Underpayment - Payment Journey: Pay full amount",
       "path": [
         {
           "caption": "check income tax last year",
@@ -636,6 +871,112 @@ var data = {
           "note": "Notes go here..."
         }
       ]
-    }
+    },
+    {
+      "title": "Other - Self assessed User",
+      "path": [
+        {
+          "caption": "check income tax last year",
+          "imgref": "images/self-assessed-user/01-check-income-tax-last-year.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "self assessment",
+          "imgref": "images/self-assessed-user/03-self-assessment.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "self assessment tax returns",
+          "imgref": "images/self-assessed-user/02-self-assessment-tax-returns.png",
+          "note": "Notes go here..."
+        }
+      ]
+    },
+    {
+      "title": "Other - Citizen Details error page",
+      "path": [
+        {
+          "caption": "check income tax last year",
+          "imgref": "images/citizen-details-error-page/01-check-income-tax-last-year.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "mci contact hmrc",
+          "imgref": "images/citizen-details-error-page/02-mci-contact-hmrc.png",
+          "note": "Notes go here..."
+        }
+      ]
+    },
+    {
+      "title": "Other - Technical Difficulties",
+      "path": [
+        {
+          "caption": "check income tax last year",
+          "imgref": "images/technical-difficulties/01-check-income-tax-last-year.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "service unavailable",
+          "imgref": "images/technical-difficulties/02-service-unavailable.png",
+          "note": "Notes go here..."
+        }
+      ]
+    },
+    {
+      "title": "Other - Not employed",
+      "path": [
+        {
+          "caption": "check income tax last year",
+          "imgref": "images/not-employed/01-check-income-tax-last-year.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "not employed",
+          "imgref": "images/not-employed/02-not-employed.png",
+          "note": "Notes go here..."
+        }
+      ]
+    },
+    {
+      "title": "Other - No-Rec",
+      "path": [
+        {
+          "caption": "check income tax last year",
+          "imgref": "images/no-rec/01-check-income-tax-last-year.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "not yet calculated",
+          "imgref": "images/no-rec/03-not-yet-calculated.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "check income tax",
+          "imgref": "images/no-rec/02-check-income-tax.png",
+          "note": "Notes go here..."
+        }
+      ]
+    },
+    {
+      "title": "Other - Balanced",
+      "path": [
+        {
+          "caption": "check income tax last year",
+          "imgref": "images/balanced/01-check-income-tax-last-year.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "right amount",
+          "imgref": "images/balanced/03-right-amount.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "check income tax",
+          "imgref": "images/balanced/02-check-income-tax.png",
+          "note": "Notes go here..."
+        }
+      ]
+    },
+    
   ]
 }
