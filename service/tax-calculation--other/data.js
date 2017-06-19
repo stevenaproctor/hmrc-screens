@@ -3,7 +3,37 @@ var data = {
   "last-updated": "Some date",
   "userjourneys": [
     {
-      "title": "Self assessed User",
+      "title": "Overpayment - Available without supplement",
+      "path": [
+        {
+          "caption": "check income tax last year",
+          "imgref": "images/available-without-supplement/02-check-income-tax-last-year.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "paid too much",
+          "imgref": "images/available-without-supplement/03-paid-too-much.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "why you owe tax",
+          "imgref": "images/available-without-supplement/01-why-you-owe-tax.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "calculation summary",
+          "imgref": "images/available-without-supplement/04-calculation-summary.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "get your refund",
+          "imgref": "images/available-without-supplement/05-get-your-refund.png",
+          "note": "Notes go here..."
+        }
+      ]
+    },
+    {
+      "title": "Other - Self assessed User",
       "path": [
         {
           "caption": "check income tax last year",
@@ -23,7 +53,7 @@ var data = {
       ]
     },
     {
-      "title": "Citizen Details error page",
+      "title": "Other - Citizen Details error page",
       "path": [
         {
           "caption": "check income tax last year",
@@ -38,7 +68,7 @@ var data = {
       ]
     },
     {
-      "title": "Technical Difficulties",
+      "title": "Other - Technical Difficulties",
       "path": [
         {
           "caption": "check income tax last year",
@@ -53,7 +83,7 @@ var data = {
       ]
     },
     {
-      "title": "Not employed",
+      "title": "Other - Not employed",
       "path": [
         {
           "caption": "check income tax last year",
@@ -68,7 +98,7 @@ var data = {
       ]
     },
     {
-      "title": "No-Rec",
+      "title": "Other - No-Rec",
       "path": [
         {
           "caption": "check income tax last year",
@@ -88,7 +118,7 @@ var data = {
       ]
     },
     {
-      "title": "Balanced",
+      "title": "Other - Balanced",
       "path": [
         {
           "caption": "check income tax last year",
@@ -106,6 +136,7 @@ var data = {
           "note": "Notes go here..."
         }
       ]
-    }
+    },
+    
   ]
 }
