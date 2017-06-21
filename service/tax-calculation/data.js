@@ -3,7 +3,7 @@ var data = {
   "last-updated": "Some date",
   "userjourneys": [
      {
-      "title": "Overpayment - Overpayment - Available without supplement",
+      "title": "Overpayment - Available without supplement",
       "path": [
         {
           "caption": "check income tax last year",
@@ -33,7 +33,7 @@ var data = {
       ]
     },
     {
-      "title": "Overpayment - Overpayment - Processing without supplement",
+      "title": "Overpayment - Processing without supplement",
       "path": [
         {
           "caption": "check income tax last year",
@@ -58,7 +58,7 @@ var data = {
       ]
     },
     {
-      "title": "Overpayment - Overpayment - Cheque sent without supplement",
+      "title": "Overpayment - Cheque sent without supplement",
       "path": [
         {
           "caption": "check income tax last year",
@@ -83,7 +83,7 @@ var data = {
       ]
     },
     {
-      "title": "Overpayment - Overpayment - Claimed without supplement",
+      "title": "Overpayment - Claimed without supplement",
       "path": [
         {
           "caption": "check income tax last year",
@@ -103,136 +103,6 @@ var data = {
         {
           "caption": "calculation summary",
           "imgref": "images/claimed-without-supplement/04-calculation-summary.png",
-          "note": "Notes go here..."
-        }
-      ]
-    },
-    {
-      "title": "Overpayment - Overpayment - Not available without supplement",
-      "path": [
-        {
-          "caption": "check income tax last year",
-          "imgref": "images/not-available-without-supplement/02-check-income-tax-last-year.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "paid too much",
-          "imgref": "images/not-available-without-supplement/03-paid-too-much.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "why you owe tax",
-          "imgref": "images/not-available-without-supplement/04-why-you-owe-tax.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "calculation summary",
-          "imgref": "images/not-available-without-supplement/01-calculation-summary.png",
-          "note": "Notes go here..."
-        }
-      ]
-    },
-    {
-      "title": "Overpayment - Overpayment - Available with supplement",
-      "path": [
-        {
-          "caption": "check income tax last year",
-          "imgref": "images/available-with-supplement/01-check-income-tax-last-year.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "paid too much",
-          "imgref": "images/available-with-supplement/03-paid-too-much.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "why you owe tax",
-          "imgref": "images/available-with-supplement/04-why-you-owe-tax.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "get your refund",
-          "imgref": "images/available-with-supplement/02-get-your-refund.png",
-          "note": "Notes go here..."
-        }
-      ]
-    },
-    {
-      "title": "Overpayment - Overpayment - Processing with supplement",
-      "path": [
-        {
-          "caption": "check income tax last year",
-          "imgref": "images/processing-with-supplement/02-check-income-tax-last-year.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "paid too much",
-          "imgref": "images/processing-with-supplement/01-paid-too-much.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "why you owe tax",
-          "imgref": "images/processing-with-supplement/03-why-you-owe-tax.png",
-          "note": "Notes go here..."
-        }
-      ]
-    },
-    {
-      "title": "Overpayment - Cheque sent with supplement",
-      "path": [
-        {
-          "caption": "check income tax last year",
-          "imgref": "images/cheque-sent-with-supplement/02-check-income-tax-last-year.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "paid too much",
-          "imgref": "images/cheque-sent-with-supplement/01-paid-too-much.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "why you owe tax",
-          "imgref": "images/cheque-sent-with-supplement/03-why-you-owe-tax.png",
-          "note": "Notes go here..."
-        }
-      ]
-    },
-    {
-      "title": "Overpayment - Claimed with supplement",
-      "path": [
-        {
-          "caption": "check income tax last year",
-          "imgref": "images/claimed-with-supplement/02-check-income-tax-last-year.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "paid too much",
-          "imgref": "images/claimed-with-supplement/01-paid-too-much.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "why you owe tax",
-          "imgref": "images/claimed-with-supplement/03-why-you-owe-tax.png",
-          "note": "Notes go here..."
-        }
-      ]
-    },
-    {
-      "title": "Overpayment - Not available with supplement",
-      "path": [
-        {
-          "caption": "check income tax last year",
-          "imgref": "images/not-available-with-supplement/01-check-income-tax-last-year.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "paid too much",
-          "imgref": "images/not-available-with-supplement/02-paid-too-much.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "why you owe tax",
-          "imgref": "images/not-available-with-supplement/03-why-you-owe-tax.png",
           "note": "Notes go here..."
         }
       ]
@@ -263,46 +133,6 @@ var data = {
       ]
     },
     {
-      "title": "Underpayment - Coded out not eligible",
-      "path": [
-        {
-          "caption": "check income tax last year",
-          "imgref": "images/coded-out-not-eligible/01-check-income-tax-last-year.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "paid too little",
-          "imgref": "images/coded-out-not-eligible/02-paid-too-little.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "why you owe tax",
-          "imgref": "images/coded-out-not-eligible/03-why-you-owe-tax.png",
-          "note": "Notes go here..."
-        }
-      ]
-    },
-    {
-      "title": "Underpayment - Collected not eligible",
-      "path": [
-        {
-          "caption": "check income tax last year",
-          "imgref": "images/collected-not-eligible/01-check-income-tax-last-year.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "paid too little",
-          "imgref": "images/collected-not-eligible/02-paid-too-little.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "why you owe tax",
-          "imgref": "images/collected-not-eligible/03-why-you-owe-tax.png",
-          "note": "Notes go here..."
-        }
-      ]
-    },
-    {
       "title": "Underpayment - Outstanding eligible",
       "path": [
         {
@@ -323,116 +153,6 @@ var data = {
         {
           "caption": "calculation summary",
           "imgref": "images/outstanding-eligible/04-04-calculation-summary.png",
-          "note": "Notes go here..."
-        }
-      ]
-    },
-    {
-      "title": "Underpayment - Outstanding not eligible",
-      "path": [
-        {
-          "caption": "check income tax last year",
-          "imgref": "images/outstanding-not-eligible/01-01-check-income-tax-last-year.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "paid too little",
-          "imgref": "images/outstanding-not-eligible/02-02-paid-too-little.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "why you owe tax",
-          "imgref": "images/outstanding-not-eligible/03-03-why-you-owe-tax.png",
-          "note": "Notes go here..."
-        }
-      ]
-    },
-    {
-      "title": "Underpayment - Part paid eligible",
-      "path": [
-        {
-          "caption": "check income tax last year",
-          "imgref": "images/part-paid-eligible/01-01-check-income-tax-last-year.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "paid too little",
-          "imgref": "images/part-paid-eligible/02-02-paid-too-little.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "why you owe tax",
-          "imgref": "images/part-paid-eligible/03-03-why-you-owe-tax.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "calculation summary",
-          "imgref": "images/part-paid-eligible/04-04-calculation-summary.png",
-          "note": "Notes go here..."
-        }
-      ]
-    },
-    {
-      "title": "Underpayment - Part paid not eligible",
-      "path": [
-        {
-          "caption": "check income tax last year",
-          "imgref": "images/part-paid-not-eligible/01-01-check-income-tax-last-year.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "paid too little",
-          "imgref": "images/part-paid-not-eligible/02-02-paid-too-little.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "why you owe tax",
-          "imgref": "images/part-paid-not-eligible/03-03-why-you-owe-tax.png",
-          "note": "Notes go here..."
-        }
-      ]
-    },
-    {
-      "title": "Underpayment - Part paid part coded eligible",
-      "path": [
-        {
-          "caption": "check income tax last year",
-          "imgref": "images/part-paid-part-coded-eligible/01-01-check-income-tax-last-year.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "paid too little",
-          "imgref": "images/part-paid-part-coded-eligible/02-02-paid-too-little.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "why you owe tax",
-          "imgref": "images/part-paid-part-coded-eligible/03-03-why-you-owe-tax.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "calculation summary",
-          "imgref": "images/part-paid-part-coded-eligible/04-04-calculation-summary.png",
-          "note": "Notes go here..."
-        }
-      ]
-    },
-    {
-      "title": "Underpayment - Part paid part coded not eligible",
-      "path": [
-        {
-          "caption": "check income tax last year",
-          "imgref": "images/part-paid-part-coded-not-eligible/01-01-check-income-tax-last-year.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "paid too little",
-          "imgref": "images/part-paid-part-coded-not-eligible/02-02-paid-too-little.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "why you owe tax",
-          "imgref": "images/part-paid-part-coded-not-eligible/03-03-why-you-owe-tax.png",
           "note": "Notes go here..."
         }
       ]
@@ -868,71 +588,6 @@ var data = {
         {
           "caption": "payment service",
           "imgref": "images/payment-journey--pay-full-amount/04-04-payment-service.png",
-          "note": "Notes go here..."
-        }
-      ]
-    },
-    {
-      "title": "Other - Self assessed User",
-      "path": [
-        {
-          "caption": "check income tax last year",
-          "imgref": "images/self-assessed-user/01-check-income-tax-last-year.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "self assessment",
-          "imgref": "images/self-assessed-user/03-self-assessment.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "self assessment tax returns",
-          "imgref": "images/self-assessed-user/02-self-assessment-tax-returns.png",
-          "note": "Notes go here..."
-        }
-      ]
-    },
-    {
-      "title": "Other - Citizen Details error page",
-      "path": [
-        {
-          "caption": "check income tax last year",
-          "imgref": "images/citizen-details-error-page/01-check-income-tax-last-year.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "mci contact hmrc",
-          "imgref": "images/citizen-details-error-page/02-mci-contact-hmrc.png",
-          "note": "Notes go here..."
-        }
-      ]
-    },
-    {
-      "title": "Other - Technical Difficulties",
-      "path": [
-        {
-          "caption": "check income tax last year",
-          "imgref": "images/technical-difficulties/01-check-income-tax-last-year.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "service unavailable",
-          "imgref": "images/technical-difficulties/02-service-unavailable.png",
-          "note": "Notes go here..."
-        }
-      ]
-    },
-    {
-      "title": "Other - Not employed",
-      "path": [
-        {
-          "caption": "check income tax last year",
-          "imgref": "images/not-employed/01-check-income-tax-last-year.png",
-          "note": "Notes go here..."
-        },
-        {
-          "caption": "not employed",
-          "imgref": "images/not-employed/02-not-employed.png",
           "note": "Notes go here..."
         }
       ]
