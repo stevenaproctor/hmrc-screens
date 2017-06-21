@@ -101,11 +101,6 @@ $(document).ready(function () {
     }
   });
 
-  // Slider
-  $("#slider").on("input change", function () {
-    updateSlider(this.value);
-  });
-
   // Opens an image in full-screen view
   function openScreen(screen) {
 
@@ -146,48 +141,63 @@ $(document).ready(function () {
 
   };
 
-
-  // Zoom slider
-  function updateSlider(slideAmount) {
-
-    $('.image-wrapper').css('font-size', slideAmount + "%");
-
-    // Allow v-scroll if zoom is over 100%
-    if (slideAmount > 100) {
-      $('.image-wrapper').addClass('scrollable');
-    } else if (slideAmount <= 100) {
-      $('.image-wrapper').removeClass('scrollable');
-    }
-
-    // Hide captions if zoom is less than 50%
-    if (slideAmount > 50) {
-      $('.image-title').removeClass('hidden');
-    } else if (slideAmount <= 50) {
-      $('.image-title').addClass('hidden');
-    }
-
-    // Show notes if zoom is over 300%
-    if (slideAmount > 300) {
-      $('.note').addClass('visible');
-    } else if (slideAmount <= 300) {
-      $('.note').removeClass('visible');
-    }
-  }
-
 });
 
 
-////////////////Vanilla JS
+//////////////////////////////////////////////////
+/////////////////////////////////////////Vanilla JS
 
-var body = document.getElementsByTagName('body')[0]
-var fullHeightToggle = document.querySelector('.js-full-height');
+document.addEventListener("DOMContentLoaded", function () {
+
+  var body = document.getElementsByTagName('body')[0]
+  var fullHeightToggle = document.querySelector('.js-full-height');
+  var rangeInput = document.getElementById('slider');
+  var imageWrapper = document.getElementsByClassName('image-wrapper');
+  var imageTitle = document.getElementsByClassName('image-title');
+  var imageNote = document.getElementsByClassName('note');
 
 //Full height images toggle
 
-document.addEventListener("DOMContentLoaded", function () {
   fullHeightToggle.addEventListener('click', function () {
     body.classList.toggle('full-height')
   })
+
+//Slider for zooming screens
+
+  rangeInput.addEventListener("change", function () {
+    updateSlider(rangeInput.value)
+  }, false);
+
+
+  function updateSlider(slideAmount) {
+
+    for (var i = 0; i <= imageWrapper.length - 1; i++) {
+      imageWrapper[i].style['font-size'] = slideAmount + '%';
+
+      // Allow v-scroll if zoom is over 100%
+      if (slideAmount > 100) {
+        imageWrapper[i].classList.add('scrollable');
+      } else if (slideAmount <= 100) {
+        imageWrapper[i].classList.remove('scrollable');
+      }
+
+      // Hide captions if zoom is less than 50%
+      if (slideAmount > 50) {
+        imageTitle[i].classList.remove('hidden');
+      } else if (slideAmount <= 50) {
+        imageTitle[i].classList.add('hidden');
+      }
+
+      // Hide captions if zoom is less than 50%
+      if (slideAmount > 300) {
+        imageNote[i].classList.add('visible');
+      } else if (slideAmount <= 300) {
+        imageNote[i].classList.remove('visible');
+      }
+    }
+
+  }
+
 });
 
 
