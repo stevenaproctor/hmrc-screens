@@ -1,10 +1,5 @@
 $(document).ready(function () {
 
-  // Close all scenarios by default
-  $('.image-set-images').hide();
-  $('.toolbar').hide();
-
-
   // toggle a scenario
   $(".image-set-title").click(function (event) {
     $(this).toggleClass('open')
@@ -39,107 +34,107 @@ $(document).ready(function () {
     $('.all-toggle').hide();
   }
 
-  // Open all scenarios
-  $(".js-open-all").click(function (event) {
+  // // Open all scenarios
+  // $(".js-open-all").click(function (event) {
+  //
+  //   $('.image-set-images').show();
+  //   $('.image-set-title').addClass('open');
+  //   $(".js-close-all").show();
+  //   $('.toolbar').show();
+  //   $(this).hide();
+  // });
+  //
+  // // Close all scenarios
+  // $(".js-close-all").click(function (event) {
+  //
+  //   $('.image-set-images').hide();
+  //   $('.image-set-title').removeClass('open');
+  //   $(".js-open-all").show();
+  //   $('.toolbar').hide();
+  //   $(this).hide();
+  // });
 
-    $('.image-set-images').show();
-    $('.image-set-title').addClass('open');
-    $(".js-close-all").show();
-    $('.toolbar').show();
-    $(this).hide();
-  });
+  // // Opens full-screen view of current image
+  // $(".js-open-screen").click(function (event) {
+  //   var screen = $(this).parents('.image')
+  //   openScreen(screen);
+  // });
+  //
+  // // Go to next image when in full-screen view
+  // $(".js-next-screen").click(function (event) {
+  //   var screen = $(this).parents('.image');
+  //   openScreen(screen.next());
+  // });
+  //
+  // // Go to previous image when in full-screen view
+  // $(".js-prev-screen").click(function (event) {
+  //   var screen = $(this).parents('.image');
+  //   openScreen(screen.prev());
+  // });
+  //
+  // // Close full-screen view
+  // $(".js-close-screen").click(function (event) {
+  //   var screen = $(this).parents('.image');
+  //   closeScreen(screen);
+  // });
+  //
+  //
+  // // Handle keyboard
+  // $(document).keydown(function (event) {
+  //   // Find the currently zoomed image
+  //   var screen = $('.zoomed-in');
+  //   switch (event.which) {
+  //     case 39:
+  //       openScreen(screen.next());
+  //       break; // Right
+  //     case 37:
+  //       openScreen(screen.prev());
+  //       break; // Left
+  //     case 27:
+  //       closeScreen(screen);
+  //       break;
+  //   }
+  // });
 
-  // Close all scenarios
-  $(".js-close-all").click(function (event) {
-
-    $('.image-set-images').hide();
-    $('.image-set-title').removeClass('open');
-    $(".js-open-all").show();
-    $('.toolbar').hide();
-    $(this).hide();
-  });
-
-  // Opens full-screen view of current image
-  $(".js-open-screen").click(function (event) {
-    var screen = $(this).parents('.image')
-    openScreen(screen);
-  });
-
-  // Go to next image when in full-screen view
-  $(".js-next-screen").click(function (event) {
-    var screen = $(this).parents('.image');
-    openScreen(screen.next());
-  });
-
-  // Go to previous image when in full-screen view
-  $(".js-prev-screen").click(function (event) {
-    var screen = $(this).parents('.image');
-    openScreen(screen.prev());
-  });
-
-  // Close full-screen view
-  $(".js-close-screen").click(function (event) {
-    var screen = $(this).parents('.image');
-    closeScreen(screen);
-  });
-
-
-  // Handle keyboard
-  $(document).keydown(function (event) {
-    // Find the currently zoomed image
-    var screen = $('.zoomed-in');
-    switch (event.which) {
-      case 39:
-        openScreen(screen.next());
-        break; // Right
-      case 37:
-        openScreen(screen.prev());
-        break; // Left
-      case 27:
-        closeScreen(screen);
-        break;
-    }
-  });
-
-  // Opens an image in full-screen view
-  function openScreen(screen) {
-
-    // Close any currently zoomed in images
-    $('.zoomed-in').removeClass('zoomed-in');
-
-    // Scroll all images back to top
-    $('.image-wrapper').scrollTop(0);
-
-    if (screen.length) {
-      $('body').addClass('js-zoomed');
-      screen.addClass('zoomed-in');
-      // Stop rest of page from scrolling when scrolling the popup
-      if ($(document).height() > $(window).height()) {
-        var scrollTop = ($('html').scrollTop()) ? $('html').scrollTop() : $('body').scrollTop(); // Works for Chrome, Firefox, IE...
-        $('html').addClass('noscroll').css('top', -scrollTop);
-      }
-    } else {
-      closeScreen(screen)
-    }
-
-  };
-
-
-  // Closes an image in full-screen view
-  function closeScreen(screen) {
-
-    // Scroll all images back to top
-    $('.image-wrapper').scrollTop(0);
-
-    screen.removeClass('zoomed-in');
-    $('body').removeClass('js-zoomed');
-
-    // Re-enable scrolling of rest of page
-    var scrollTop = parseInt($('html').css('top'));
-    $('html').removeClass('noscroll');
-    $('html,body').scrollTop(-scrollTop);
-
-  };
+  // // Opens an image in full-screen view
+  // function openScreen(screen) {
+  //
+  //   // Close any currently zoomed in images
+  //   $('.zoomed-in').removeClass('zoomed-in');
+  //
+  //   // Scroll all images back to top
+  //   $('.image-wrapper').scrollTop(0);
+  //
+  //   if (screen.length) {
+  //     $('body').addClass('js-zoomed');
+  //     screen.addClass('zoomed-in');
+  //     // Stop rest of page from scrolling when scrolling the popup
+  //     if ($(document).height() > $(window).height()) {
+  //       var scrollTop = ($('html').scrollTop()) ? $('html').scrollTop() : $('body').scrollTop(); // Works for Chrome, Firefox, IE...
+  //       $('html').addClass('noscroll').css('top', -scrollTop);
+  //     }
+  //   } else {
+  //     closeScreen(screen)
+  //   }
+  //
+  // };
+  //
+  //
+  // // Closes an image in full-screen view
+  // function closeScreen(screen) {
+  //
+  //   // Scroll all images back to top
+  //   $('.image-wrapper').scrollTop(0);
+  //
+  //   screen.removeClass('zoomed-in');
+  //   $('body').removeClass('js-zoomed');
+  //
+  //   // Re-enable scrolling of rest of page
+  //   var scrollTop = parseInt($('html').css('top'));
+  //   $('html').removeClass('noscroll');
+  //   $('html,body').scrollTop(-scrollTop);
+  //
+  // };
 
 });
 
@@ -149,24 +144,78 @@ $(document).ready(function () {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  var body = document.getElementsByTagName('body')[0]
+  var body = document.getElementsByTagName('body')[0];
   var fullHeightToggle = document.querySelector('.js-full-height');
   var rangeInput = document.getElementById('slider');
   var imageWrapper = document.getElementsByClassName('image-wrapper');
   var imageTitle = document.getElementsByClassName('image-title');
   var imageNote = document.getElementsByClassName('note');
+  var toggleImageSets = document.querySelector('.all-toggle');
+  var openAll = document.querySelector('.js-open-all');
+  var closeAll = document.querySelector('.js-close-all');
+  var toolBar = document.querySelector('.toolbar');
+  var imagesSet = document.getElementsByClassName('image-set-images');
+  var isToggleImageSetsOpen = false;
+  var images = document.getElementsByClassName('image');
 
-//Full height images toggle
+  //Zoom into screen
+  for(var i = 0; i <= images.length - 1; i++){
+    images[i].onclick = function(){
+      this.classList.add('zoomed-in')
+    }
 
-  fullHeightToggle.addEventListener('click', function () {
-    body.classList.toggle('full-height')
-  })
+    images[i].querySelector('.js-close-screen').onclick = function(e){
+      e.stopPropagation()
+      this.parentNode.parentNode.classList.remove('zoomed-in')
+    }
+  }
 
-//Slider for zooming screens
+  //Close the screens and hide the toolbar onload
+  for (var i = 0; i <= imagesSet.length - 1; i++) {
+    imagesSet[i].style.display = 'none';
+  }
+  toolBar.style.display = 'none';
 
-  rangeInput.addEventListener("change", function () {
-    updateSlider(rangeInput.value)
-  }, false);
+  //Toggle the view of all images
+
+  toggleImageSets.onclick = function() {
+    toggleAllImages()
+  }
+
+  function toggleAllImages() {
+
+    isToggleImageSetsOpen = !isToggleImageSetsOpen;
+
+    for (var i = 0; i <= imagesSet.length - 1; i++) {
+
+      if (isToggleImageSetsOpen) {
+        imagesSet[i].style.display = 'block';
+        openAll.style.display = 'none';
+        closeAll.style.display = 'inline';
+        toolBar.style.display = 'block';
+      } else {
+        imagesSet[i].style.display = 'none';
+        openAll.style.display = 'inline';
+        closeAll.style.display = 'none';
+        toolBar.style.display = 'none';
+      }
+
+    }
+
+  }
+
+  //Full height images toggle
+
+  fullHeightToggle.onclick = function(){
+    body.classList.toggle('full-height');
+  }
+
+
+  //Slider for zooming screens
+
+  rangeInput.oninput = function(){
+    updateSlider(rangeInput.value);
+  }
 
 
   function updateSlider(slideAmount) {
