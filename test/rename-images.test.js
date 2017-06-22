@@ -11,6 +11,7 @@ test('Sorts the images by creation date and renames them', function (t) {
 
   cleanup(imagesDir)
   copyDir(filesDir, imagesDir)
+  cleanup(path.join(imagesDir, 'sample-data.js'))
   cleanup(path.join(imagesDir, 'test.txt'))
 
   var images = fs.readdirSync(imagesDir).map(function (image) {

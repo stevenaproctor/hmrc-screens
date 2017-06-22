@@ -38,7 +38,7 @@
                     <div class="image-title">
                         <span class="close js-close-screen">✕</span>
                         <span class="journey">{{../title}}</span>
-                        <h3>{{math @index "+" 1}}. {{caption}}</h3>
+                        <h3>{{math @index "+" 1}}. <span class="path">{{caption}}</path></h3>
                     </div>
                     <div class="image-wrapper js-open-screen">
                         <img src="{{imgref}}" />
@@ -46,8 +46,13 @@
                     <div class="arrow">→</div>
                     <div class="note">
                         {{#note}}
-                        <p>{{{.}}}</p>
+                        <p class="note-display">{{{.}}}</p>
                         {{/note}}
+                        <p onclick="handleEditNoteClick()" class="button note-edit-button">Edit note</p>
+
+                        <textarea class="note-input">{{note}}</textarea>
+                        <p onclick="handleSaveNoteClick()" class="button note-save-button">Save</p>
+
                         <p class="next button js-next-screen">Next</p>
                         <p class="prev button js-prev-screen">Prev</p>
                     </div>

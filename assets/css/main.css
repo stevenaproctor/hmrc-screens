@@ -145,12 +145,8 @@ a{
 }
 
 .image.zoomed-in .button{
-	display: none;
-	display: inline-block;
 	background: #DEE0E2;
 	margin: 30px 0;
-	position: fixed;
-	bottom: 0;
 
 	font-size: 19px;
 
@@ -170,6 +166,38 @@ a{
 	color: white;
 	right: 0;
 }
+
+.note-edit-button,
+.note-save-button {
+	width: 30%;
+}
+
+.note-save-button {
+	display: none;
+}
+
+.note-display {
+	white-space: pre-wrap !important;
+}
+
+.note-input {
+	background-color: #fff;
+  border: 2px solid #6f777b;
+	display: none;
+	font-size: 14px;
+	height: 100px;
+	margin: 0 25px 20px;
+	padding: 5px;
+	width: 80%;
+}
+
+.image.zoomed-in .button.next,
+.image.zoomed-in .button.prev {
+	display: inline-block;
+	position: fixed;
+	bottom: 0;
+}
+
 .image.zoomed-in .button.next:hover{
 	background-color: #00692F;
 }
