@@ -21,7 +21,6 @@
     "lint": "standard '*.js' 'lib/**/*.js' 'test/**/*.js' --fix"
   },
   "dependencies": {
-    "body-parser": "^1.17.2",
     "cheerio": "^1.0.0-rc.1",
     "colors": "^1.1.2",
     "express": "^4.15.3",

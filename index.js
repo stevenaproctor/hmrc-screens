@@ -11,6 +11,7 @@ var createService = require('./lib/create-service')
 var validationUtil = require('./lib/utils/validation')
 
 var servicesDir = path.join(__dirname, 'service')
+
 var listServices = function () {
   return getServices(servicesDir)
     .then(function (services) {

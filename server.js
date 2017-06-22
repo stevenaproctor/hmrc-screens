@@ -1,14 +1,13 @@
-var bodyParser = require('body-parser')
 var express = require('express')
 var path = require('path')
 var app = express()
 
 app.set('port', 3000)
-app.use(bodyParser.json())
 
-app.get('/', function (req, res) {
+app.get(['/', '/index.html'], function (req, res) {
   res.sendFile(path.join(__dirname, '/index.html'))
 })
+
 app.use('/assets', express.static(path.join(__dirname, 'assets')))
 app.use('/service', express.static(path.join(__dirname, 'service')))
 
