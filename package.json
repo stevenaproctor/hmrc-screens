@@ -14,7 +14,8 @@
   "homepage": "https://github.com/ian-leggett/hmrc-screens#readme",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
+    "add": "node index.js",
     "test": "npm run lint && tape test/*.js",
     "test:watch": "nodemon -q --exec 'npm run test' --ignore **/service/",
     "lint": "standard '*.js' 'lib/**/*.js' 'test/**/*.js' --fix"
@@ -22,6 +23,7 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.1",
     "colors": "^1.1.2",
+    "express": "^4.15.3",
     "inquirer": "^3.0.6"
   },
   "devDependencies": {
@@ -30,6 +32,7 @@
     "rimraf": "^2.6.1",
     "sinon": "^2.3.1",
     "standard": "^10.0.2",
+    "supertest": "^3.0.0",
     "tape": "^4.6.3"
   }
 }
