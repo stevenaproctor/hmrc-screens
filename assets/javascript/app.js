@@ -1,147 +1,3 @@
-$(document).ready(function () {
-
-  // toggle a scenario
-  $(".image-set-title").click(function (event) {
-    $(this).toggleClass('open')
-    $(this).next().toggle();
-
-    // Show toolbar if at least one set is open
-    if ($('.image-set-title.open').length) {
-      $('.toolbar').show();
-    } else {
-      $('.toolbar').hide();
-    }
-
-    // If all are open, make sure toggle is set to 'Close all'
-    if ($('.image-set-title').length == $('.image-set-title.open').length) {
-      console.log('all open!');
-      $(".js-close-all").show();
-      $(".js-open-all").hide();
-    }
-
-    // If all closed, make sure toggle is set to 'Open all'
-    if (!$('.image-set-title.open').length) {
-      console.log('all closed!');
-      $(".js-close-all").hide();
-      $(".js-open-all").show();
-    }
-
-  });
-
-  // If there's only one image set, don't bother with all the toggle stuff
-  if ($('.image-set-title').length == 1) {
-    $('.image-set-title')[0].click();
-    $('.all-toggle').hide();
-  }
-
-  // // Open all scenarios
-  // $(".js-open-all").click(function (event) {
-  //
-  //   $('.image-set-images').show();
-  //   $('.image-set-title').addClass('open');
-  //   $(".js-close-all").show();
-  //   $('.toolbar').show();
-  //   $(this).hide();
-  // });
-  //
-  // // Close all scenarios
-  // $(".js-close-all").click(function (event) {
-  //
-  //   $('.image-set-images').hide();
-  //   $('.image-set-title').removeClass('open');
-  //   $(".js-open-all").show();
-  //   $('.toolbar').hide();
-  //   $(this).hide();
-  // });
-
-  // // Opens full-screen view of current image
-  // $(".js-open-screen").click(function (event) {
-  //   var screen = $(this).parents('.image')
-  //   openScreen(screen);
-  // });
-  //
-  // // Go to next image when in full-screen view
-  // $(".js-next-screen").click(function (event) {
-  //   var screen = $(this).parents('.image');
-  //   openScreen(screen.next());
-  // });
-  //
-  // // Go to previous image when in full-screen view
-  // $(".js-prev-screen").click(function (event) {
-  //   var screen = $(this).parents('.image');
-  //   openScreen(screen.prev());
-  // });
-  //
-  // // Close full-screen view
-  // $(".js-close-screen").click(function (event) {
-  //   var screen = $(this).parents('.image');
-  //   closeScreen(screen);
-  // });
-  //
-  //
-  // // Handle keyboard
-  // $(document).keydown(function (event) {
-  //   // Find the currently zoomed image
-  //   var screen = $('.zoomed-in');
-  //   switch (event.which) {
-  //     case 39:
-  //       openScreen(screen.next());
-  //       break; // Right
-  //     case 37:
-  //       openScreen(screen.prev());
-  //       break; // Left
-  //     case 27:
-  //       closeScreen(screen);
-  //       break;
-  //   }
-  // });
-
-  // // Opens an image in full-screen view
-  // function openScreen(screen) {
-  //
-  //   // Close any currently zoomed in images
-  //   $('.zoomed-in').removeClass('zoomed-in');
-  //
-  //   // Scroll all images back to top
-  //   $('.image-wrapper').scrollTop(0);
-  //
-  //   if (screen.length) {
-  //     $('body').addClass('js-zoomed');
-  //     screen.addClass('zoomed-in');
-  //     // Stop rest of page from scrolling when scrolling the popup
-  //     if ($(document).height() > $(window).height()) {
-  //       var scrollTop = ($('html').scrollTop()) ? $('html').scrollTop() : $('body').scrollTop(); // Works for Chrome, Firefox, IE...
-  //       $('html').addClass('noscroll').css('top', -scrollTop);
-  //     }
-  //   } else {
-  //     closeScreen(screen)
-  //   }
-  //
-  // };
-  //
-  //
-  // // Closes an image in full-screen view
-  // function closeScreen(screen) {
-  //
-  //   // Scroll all images back to top
-  //   $('.image-wrapper').scrollTop(0);
-  //
-  //   screen.removeClass('zoomed-in');
-  //   $('body').removeClass('js-zoomed');
-  //
-  //   // Re-enable scrolling of rest of page
-  //   var scrollTop = parseInt($('html').css('top'));
-  //   $('html').removeClass('noscroll');
-  //   $('html,body').scrollTop(-scrollTop);
-  //
-  // };
-
-});
-
-
-//////////////////////////////////////////////////
-/////////////////////////////////////////Vanilla JS
-
 document.addEventListener("DOMContentLoaded", function () {
 
   var body = document.getElementsByTagName('body')[0];
@@ -150,73 +6,78 @@ document.addEventListener("DOMContentLoaded", function () {
   var imageWrapper = document.getElementsByClassName('image-wrapper');
   var imageTitle = document.getElementsByClassName('image-title');
   var imageNote = document.getElementsByClassName('note');
-  var toggleImageSets = document.querySelector('.all-toggle');
+  var allToggle = document.querySelector('.all-toggle')
   var openAll = document.querySelector('.js-open-all');
   var closeAll = document.querySelector('.js-close-all');
   var toolBar = document.querySelector('.toolbar');
-  var imagesSet = document.getElementsByClassName('image-set-images');
-  var isToggleImageSetsOpen = false;
   var images = document.getElementsByClassName('image');
+  var imagesSet = document.getElementsByClassName('image-set-images');
+  var imageSetTitles = document.getElementsByClassName('image-set-title');
+  var isToggleImageSetsOpen = true;
 
-  //Zoom into screen
-  for(var i = 0; i <= images.length - 1; i++){
-    images[i].onclick = function(){
-      this.classList.add('zoomed-in')
-    }
-
-    images[i].querySelector('.js-close-screen').onclick = function(e){
-      e.stopPropagation()
-      this.parentNode.parentNode.classList.remove('zoomed-in')
-    }
-  }
-
-  //Close the screens and hide the toolbar onload
-  for (var i = 0; i <= imagesSet.length - 1; i++) {
-    imagesSet[i].style.display = 'none';
-  }
+  //Hide toolbar
   toolBar.style.display = 'none';
 
-  //Toggle the view of all images
+  function loopAllImages() {
 
-  toggleImageSets.onclick = function() {
-    toggleAllImages()
-  }
+    for (var i = 0; i <= images.length - 1; i++) {
 
-  function toggleAllImages() {
-
-    isToggleImageSetsOpen = !isToggleImageSetsOpen;
-
-    for (var i = 0; i <= imagesSet.length - 1; i++) {
-
-      if (isToggleImageSetsOpen) {
-        imagesSet[i].style.display = 'block';
-        openAll.style.display = 'none';
-        closeAll.style.display = 'inline';
-        toolBar.style.display = 'block';
-      } else {
-        imagesSet[i].style.display = 'none';
-        openAll.style.display = 'inline';
-        closeAll.style.display = 'none';
-        toolBar.style.display = 'none';
+      images[i].onclick = function () {
+        this.classList.add('zoomed-in')
       }
 
+      //Add data attributes to the images
+      images[i].setAttribute('data-number', i.toString())
+
+      //Get all next and previous buttons and call functions
+      function changeScreen(btnControl, forwards) {
+        images[i].querySelector(btnControl).onclick = function (e) {
+          e.stopPropagation()
+          var currentImage = this.parentNode.parentNode;
+          var nextImage = currentImage.nextElementSibling;
+          var previousImage = currentImage.previousElementSibling;
+          currentImage.classList.remove('zoomed-in')
+
+          if (forwards === true) {
+            nextImage.classList.add('zoomed-in')
+          } else {
+            previousImage.classList.add('zoomed-in')
+          }
+        }
+      }
+
+      changeScreen('.js-next-screen', true)
+      changeScreen('.js-prev-screen')
+
+      //Close the screens
+      images[i].querySelector('.js-close-screen').onclick = function (e) {
+        e.stopPropagation()
+        var currentImage = this.parentNode.parentNode;
+        currentImage.classList.remove('zoomed-in')
+      }
     }
-
   }
 
-  //Full height images toggle
-
-  fullHeightToggle.onclick = function(){
-    body.classList.toggle('full-height');
+  function loopImageSets() {
+    //Close the screens and hide the toolbar onload
+    for (var i = 0; i <= imagesSet.length - 1; i++) {
+      imagesSet[i].style.display = 'none';
+    }
   }
 
-
-  //Slider for zooming screens
-
-  rangeInput.oninput = function(){
-    updateSlider(rangeInput.value);
+  function loopImageSetTitles() {
+    //Close the screens and hide the toolbar onload
+    for (var i = 0; i <= imageSetTitles.length - 1; i++) {
+      imageSetTitles[i].onclick = function () {
+        if (this.nextElementSibling.style.display === 'none') {
+          this.nextElementSibling.style.display = 'block'
+        } else {
+          this.nextElementSibling.style.display = 'none'
+        }
+        areImageSetsOpen()
+      }
+    }
   }
-
 
   function updateSlider(slideAmount) {
 
@@ -247,7 +108,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
   }
 
-});
+  function areImageSetsOpen() {
+
+    var imageSetsOpen = 0;
+
+    for (var i = 0; i <= imagesSet.length - 1; i++) {
+      if (imagesSet[i].style.display === 'block') {
+        imageSetsOpen += 1
+      }
+    }
+
+    if (imageSetsOpen >= 1) {
+      openAll.style.display = 'none';
+      closeAll.style.display = 'inline';
+      toolBar.style.display = 'block';
+    } else {
+      openAll.style.display = 'inline';
+      closeAll.style.display = 'none';
+      toolBar.style.display = 'none';
+    }
+
+  }
+
+  //Toggle the image sets
+  allToggle.onclick = function () {
+    isToggleImageSetsOpen = !isToggleImageSetsOpen
+
+    for (var i = 0; i <= imagesSet.length - 1; i++) {
+      if (isToggleImageSetsOpen === false) {
+        imagesSet[i].style.display = 'block'
+        areImageSetsOpen(isToggleImageSetsOpen)
+      }else{
+        imagesSet[i].style.display = 'none'
+        areImageSetsOpen(isToggleImageSetsOpen)
+      }
+    }
+  }
+
+//Full height images toggle
+
+  fullHeightToggle.onclick = function () {
+    body.classList.toggle('full-height');
+  }
+
+//Slider for zooming screens
+
+  rangeInput.oninput = function () {
+    updateSlider(rangeInput.value);
+  }
+
+//Run functions
+  loopAllImages();
+  loopImageSets();
+  loopImageSetTitles();
+
+
+})
+;
 
 
 Handlebars.registerHelper("math", function (lvalue, operator, rvalue, options) {
