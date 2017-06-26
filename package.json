@@ -18,9 +18,10 @@
     "add": "node index.js",
     "test": "npm run lint && tape test/*.js",
     "test:watch": "nodemon -q --exec 'npm run test' --ignore **/service/",
-    "lint": "standard '*.js' 'lib/**/*.js' 'test/**/*.js' --fix"
+    "lint": "standard '*.js' 'lib/**/*.js' 'test/*.js' 'test/utils/*.js' --fix"
   },
   "dependencies": {
+    "body-parser": "^1.17.2",
     "cheerio": "^1.0.0-rc.1",
     "colors": "^1.1.2",
     "express": "^4.15.3",
@@ -29,6 +30,7 @@
   "devDependencies": {
     "moment": "^2.18.1",
     "nodemon": "^1.11.0",
+    "proxyquire": "^1.8.0",
     "rimraf": "^2.6.1",
     "sinon": "^2.3.1",
     "standard": "^10.0.2",
