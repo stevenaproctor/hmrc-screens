@@ -177,6 +177,8 @@ a{
 }
 
 .note-display {
+	max-height: 500px;
+	overflow-y: auto;
 	white-space: pre-wrap !important;
 }
 
