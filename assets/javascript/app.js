@@ -22,6 +22,8 @@ function registerHandlers(hideOnLoad) {
     openAll.style.display = 'none';
     closeAll.style.display = 'inline';
     toolBar.style.display = 'block';
+    document.querySelector('body').classList.add('js-zoomed')
+    document.querySelector('html').classList.add('noscroll')
   }
 
   function allScenariosClosed() {
@@ -30,7 +32,8 @@ function registerHandlers(hideOnLoad) {
     openAll.style.display = 'inline';
     closeAll.style.display = 'none';
     toolBar.style.display = 'none';
-
+    document.querySelector('body').classList.remove('js-zoomed')
+    document.querySelector('html').classList.remove('noscroll')
   }
 
   function closeScenario(scenarioElement) {
