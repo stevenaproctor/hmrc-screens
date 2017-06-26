@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var imagesSet = document.getElementsByClassName('image-set-images');
   var imageSetTitles = document.getElementsByClassName('image-set-title');
 
+  toolBar.style.display = 'none';
+
 
   function scenarioOpened() {
     isAnyScenarioOpen = true;
