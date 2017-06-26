@@ -22,8 +22,6 @@ function registerHandlers(hideOnLoad) {
     openAll.style.display = 'none';
     closeAll.style.display = 'inline';
     toolBar.style.display = 'block';
-    document.querySelector('body').classList.add('js-zoomed')
-    document.querySelector('html').classList.add('noscroll')
   }
 
   function allScenariosClosed() {
@@ -32,8 +30,6 @@ function registerHandlers(hideOnLoad) {
     openAll.style.display = 'inline';
     closeAll.style.display = 'none';
     toolBar.style.display = 'none';
-    document.querySelector('body').classList.remove('js-zoomed')
-    document.querySelector('html').classList.remove('noscroll')
   }
 
   function closeScenario(scenarioElement) {
@@ -62,6 +58,8 @@ function registerHandlers(hideOnLoad) {
 
       images[i].onclick = function () {
         this.classList.add('zoomed-in');
+        document.querySelector('body').classList.add('js-zoomed')
+        document.querySelector('html').classList.add('noscroll')
       }
 
       //Add data attributes to the images
@@ -108,6 +106,8 @@ function registerHandlers(hideOnLoad) {
         e.stopPropagation();
         var currentImage = this.parentNode.parentNode;
         currentImage.classList.remove('zoomed-in');
+        document.querySelector('body').classList.remove('js-zoomed')
+        document.querySelector('html').classList.remove('noscroll')
       }
     }
   }
