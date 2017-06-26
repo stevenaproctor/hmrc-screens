@@ -71,17 +71,33 @@ document.addEventListener("DOMContentLoaded", function () {
         images[i].querySelector(btnControl).onclick = function (e) {
           e.stopPropagation()
           var currentImage = this.parentNode.parentNode;
-          var nextImage = currentImage.nextElementSibling;
-          var previousImage = currentImage.previousElementSibling;
           currentImage.classList.remove('zoomed-in');
 
-          if (forwards === true) {
-            nextImage.classList.add('zoomed-in');
+          if (forwards) {
+            moveScreenForwards(currentImage)
           } else {
-            previousImage.classList.add('zoomed-in');
+            moveScreenBackwards(currentImage)
           }
         }
       }
+
+      function moveScreenForwards(currentImage) {
+        var nextImage = currentImage.nextElementSibling;
+
+        if (nextImage) {
+          nextImage.classList.add('zoomed-in');
+        }
+
+      }
+
+      function moveScreenBackwards(currentImage) {
+        var previousImage = currentImage.previousElementSibling;
+
+        if (previousImage) {
+          previousImage.classList.add('zoomed-in');
+        }
+      }
+
 
       changeScreen('.js-next-screen', true);
       changeScreen('.js-prev-screen');
@@ -166,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
     for (var i = 0; i <= imageSetTitles.length - 1; i++) {
       toggleScenario(imageSetTitles[i]);
     }
-    
+
   }
 
 
@@ -186,8 +202,6 @@ document.addEventListener("DOMContentLoaded", function () {
   loopAllImages();
   loopImageSets();
   loopImageSetTitles();
-
-
 });
 
 Handlebars.registerHelper("math", function (lvalue, operator, rvalue, options) {
