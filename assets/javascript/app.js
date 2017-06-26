@@ -1,3 +1,5 @@
+var isAnyScenarioOpen = false;
+
 document.addEventListener("DOMContentLoaded", function () {
 
   var body = document.getElementsByTagName('body')[0];
@@ -13,21 +15,56 @@ document.addEventListener("DOMContentLoaded", function () {
   var images = document.getElementsByClassName('image');
   var imagesSet = document.getElementsByClassName('image-set-images');
   var imageSetTitles = document.getElementsByClassName('image-set-title');
-  var isToggleImageSetsOpen = true;
 
-  //Hide toolbar
-  toolBar.style.display = 'none';
+
+  function scenarioOpened() {
+    isAnyScenarioOpen = true;
+    openAll.style.display = 'none';
+    closeAll.style.display = 'inline';
+    toolBar.style.display = 'block';
+  }
+
+  function allScenariosClosed() {
+    isAnyScenarioOpen = false;
+    //Hide toolbar
+    openAll.style.display = 'inline';
+    closeAll.style.display = 'none';
+    toolBar.style.display = 'none';
+
+  }
+
+  function closeScenario(scenarioElement) {
+
+    scenarioElement.nextElementSibling.style.display = 'none';
+
+    if (!areImageSetsOpen()) {
+      allScenariosClosed();
+    }
+  }
+
+  function openScenario(scenarioElement) {
+    scenarioElement.nextElementSibling.style.display = 'block';
+    scenarioOpened();
+  }
+
+  function toggleScenario(scenarioElement) {
+    if (scenarioElement.nextElementSibling.style.display === 'none') {
+      openScenario(scenarioElement);
+    } else {
+      closeScenario(scenarioElement);
+    }
+  }
 
   function loopAllImages() {
 
     for (var i = 0; i <= images.length - 1; i++) {
 
       images[i].onclick = function () {
-        this.classList.add('zoomed-in')
+        this.classList.add('zoomed-in');
       }
 
       //Add data attributes to the images
-      images[i].setAttribute('data-number', i.toString())
+      images[i].setAttribute('data-number', i.toString());
 
       //Get all next and previous buttons and call functions
       function changeScreen(btnControl, forwards) {
@@ -36,24 +73,24 @@ document.addEventListener("DOMContentLoaded", function () {
           var currentImage = this.parentNode.parentNode;
           var nextImage = currentImage.nextElementSibling;
           var previousImage = currentImage.previousElementSibling;
-          currentImage.classList.remove('zoomed-in')
+          currentImage.classList.remove('zoomed-in');
 
           if (forwards === true) {
-            nextImage.classList.add('zoomed-in')
+            nextImage.classList.add('zoomed-in');
           } else {
-            previousImage.classList.add('zoomed-in')
+            previousImage.classList.add('zoomed-in');
           }
         }
       }
 
-      changeScreen('.js-next-screen', true)
-      changeScreen('.js-prev-screen')
+      changeScreen('.js-next-screen', true);
+      changeScreen('.js-prev-screen');
 
       //Close the screens
       images[i].querySelector('.js-close-screen').onclick = function (e) {
-        e.stopPropagation()
+        e.stopPropagation();
         var currentImage = this.parentNode.parentNode;
-        currentImage.classList.remove('zoomed-in')
+        currentImage.classList.remove('zoomed-in');
       }
     }
   }
@@ -69,12 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //Close the screens and hide the toolbar onload
     for (var i = 0; i <= imageSetTitles.length - 1; i++) {
       imageSetTitles[i].onclick = function () {
-        if (this.nextElementSibling.style.display === 'none') {
-          this.nextElementSibling.style.display = 'block'
-        } else {
-          this.nextElementSibling.style.display = 'none'
-        }
-        areImageSetsOpen()
+        toggleScenario(this);
       }
     }
   }
@@ -110,40 +142,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function areImageSetsOpen() {
 
-    var imageSetsOpen = 0;
-
     for (var i = 0; i <= imagesSet.length - 1; i++) {
       if (imagesSet[i].style.display === 'block') {
-        imageSetsOpen += 1
+        return true
       }
     }
-
-    if (imageSetsOpen >= 1) {
-      openAll.style.display = 'none';
-      closeAll.style.display = 'inline';
-      toolBar.style.display = 'block';
-    } else {
-      openAll.style.display = 'inline';
-      closeAll.style.display = 'none';
-      toolBar.style.display = 'none';
-    }
-
+    return false
   }
+
 
   //Toggle the image sets
   allToggle.onclick = function () {
-    isToggleImageSetsOpen = !isToggleImageSetsOpen
 
-    for (var i = 0; i <= imagesSet.length - 1; i++) {
-      if (isToggleImageSetsOpen === false) {
-        imagesSet[i].style.display = 'block'
-        areImageSetsOpen(isToggleImageSetsOpen)
-      }else{
-        imagesSet[i].style.display = 'none'
-        areImageSetsOpen(isToggleImageSetsOpen)
-      }
+    if (isAnyScenarioOpen) {
+
+      var toggleScenario = closeScenario;
+
+    } else {
+
+      toggleScenario = openScenario;
     }
+
+    for (var i = 0; i <= imageSetTitles.length - 1; i++) {
+      toggleScenario(imageSetTitles[i]);
+    }
+    
   }
+
 
 //Full height images toggle
 
@@ -163,9 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
   loopImageSetTitles();
 
 
-})
-;
-
+});
 
 Handlebars.registerHelper("math", function (lvalue, operator, rvalue, options) {
   lvalue = parseFloat(lvalue);
