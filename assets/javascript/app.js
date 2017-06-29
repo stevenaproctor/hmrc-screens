@@ -53,6 +53,36 @@ function registerHandlers (hideOnLoad) {
     }
   }
 
+  function changeScreen (image, btnControl, forwards) {
+    image.querySelector(btnControl).onclick = function (e) {
+      e.stopPropagation()
+      var currentImage = this.parentNode.parentNode
+      currentImage.classList.remove('zoomed-in')
+
+      if (forwards) {
+        moveScreenForwards(currentImage)
+      } else {
+        moveScreenBackwards(currentImage)
+      }
+    }
+  }
+
+  function moveScreenForwards (currentImage) {
+    var nextImage = currentImage.nextElementSibling
+
+    if (nextImage) {
+      nextImage.classList.add('zoomed-in')
+    }
+  }
+
+  function moveScreenBackwards (currentImage) {
+    var previousImage = currentImage.previousElementSibling
+
+    if (previousImage) {
+      previousImage.classList.add('zoomed-in')
+    }
+  }
+
   function loopAllImages () {
     for (var i = 0; i <= images.length - 1; i++) {
       images[i].onclick = function () {
@@ -65,38 +95,8 @@ function registerHandlers (hideOnLoad) {
       images[i].setAttribute('data-number', i.toString())
 
       // Get all next and previous buttons and call functions
-      function changeScreen (btnControl, forwards) {
-        images[i].querySelector(btnControl).onclick = function (e) {
-          e.stopPropagation()
-          var currentImage = this.parentNode.parentNode
-          currentImage.classList.remove('zoomed-in')
-
-          if (forwards) {
-            moveScreenForwards(currentImage)
-          } else {
-            moveScreenBackwards(currentImage)
-          }
-        }
-      }
-
-      function moveScreenForwards (currentImage) {
-        var nextImage = currentImage.nextElementSibling
-
-        if (nextImage) {
-          nextImage.classList.add('zoomed-in')
-        }
-      }
-
-      function moveScreenBackwards (currentImage) {
-        var previousImage = currentImage.previousElementSibling
-
-        if (previousImage) {
-          previousImage.classList.add('zoomed-in')
-        }
-      }
-
-      changeScreen('.js-next-screen', true)
-      changeScreen('.js-prev-screen')
+      changeScreen(images[i], '.js-next-screen', true)
+      changeScreen(images[i], '.js-prev-screen')
 
       // Close the screens
       images[i].querySelector('.js-close-screen').onclick = function (e) {
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
   registerHandlers(true)
 })
 
-Handlebars.registerHelper('math', function (lvalue, operator, rvalue, options) {
+window.Handlebars.registerHelper('math', function (lvalue, operator, rvalue, options) {
   lvalue = parseFloat(lvalue)
   rvalue = parseFloat(rvalue)
 
@@ -213,18 +213,18 @@ Handlebars.registerHelper('math', function (lvalue, operator, rvalue, options) {
 var template = document.getElementById('template').innerHTML
 
 function applyData (data) {
-  document.getElementById('content').innerHTML = Handlebars.compile(template)(data)
+  document.getElementById('content').innerHTML = window.Handlebars.compile(template)(data)
 }
 
-applyData(data)
+applyData(window.data)
 
-function handleSaveNoteClick () {
+window.handleSaveNoteClick = function () {
   var body = getNoteDetails()
 
-  fetch('/save-note', {
+  window.fetch('/save-note', {
     method: 'POST',
     body: JSON.stringify(body),
-    headers: new Headers({
+    headers: new window.Headers({
       'Content-Type': 'application/json'
     })
   }).then(function (response) {
@@ -259,7 +259,7 @@ function getNoteDetails () {
   // reliably get the service name in the exact format of the folder name
   var serviceName = window.location.pathname.replace('/service/', '').replace('/index.html', '')
 
-  var activeUserJourney = data.userjourneys.find(function (userJourney) {
+  var activeUserJourney = window.data.userjourneys.find(function (userJourney) {
     return userJourney.title === userJourneyTitle
   })
 
@@ -275,7 +275,7 @@ function getNoteDetails () {
   }
 }
 
-function handleEditNoteClick () {
+window.handleEditNoteClick = function () {
   var editButton = document.querySelector('.image.zoomed-in .note-edit-button')
   var input = document.querySelector('.image.zoomed-in .note-input')
   var noteDisplay = document.querySelector('.image.zoomed-in .note-display')
