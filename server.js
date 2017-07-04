@@ -17,19 +17,25 @@ app.get(['/', '/index.html'], function (req, res) {
 })
 
 app.post('/save-note', function (req, res) {
-  var servicesDir = path.join(__dirname, 'service')
-
-  saveNote(req.body, servicesDir).then(function (data) {
-    res.json(data)
-  })
+  if (Object.keys(req.body).length !== 0) {
+    var servicesDir = path.join(__dirname, 'service')
+    saveNote(req.body, servicesDir).then(function (data) {
+      res.json(data)
+    })
+  } else {
+    res.json({})
+  }
 })
 
 app.post('/save-images', function (req, res) {
-  var servicesDir = path.join(__dirname, 'service')
-
-  saveImages(req.body, servicesDir).then(function (data) {
-    res.json(data)
-  })
+  if (Object.keys(req.body).length !== 0) {
+    var servicesDir = path.join(__dirname, 'service')
+    saveImages(req.body, servicesDir).then(function (data) {
+      res.json(data)
+    })
+  } else {
+    res.json({})
+  }
 })
 
 var server = app.listen(app.get('port'), function () {

@@ -1,9 +1,27 @@
-(function (ScreensApp, window, document, undefined) {
+(function (ScreensApp, window, document) {
   var openScenario
+
+  var saveImagesPing = window.fetch('/save-images', {
+    method: 'POST'
+  })
 
   ScreensApp.applyData = function (data) {
     var template = document.getElementById('template').innerHTML
     document.getElementById('content').innerHTML = window.Handlebars.compile(template)(data)
+  }
+
+  function noteEditButtonVisibility() {
+    var noteEditditButton = document.querySelector('.note-edit-button')
+
+    window.fetch('/save-note', {
+      method: 'POST'
+    }).then(function (response) {
+      response.json()
+    }).then(function () {
+      noteEditditButton.style.display = 'block'
+    }).catch(function () {
+      noteEditditButton.style.display = 'none'
+    })
   }
 
   ScreensApp.registerHandlers = function (hideOnLoad) {
@@ -27,11 +45,11 @@
 
     toolBar.style.display = 'none'
 
-    function formatTitle(title) {
-      return title.replace(/\d+\.\s/g, "")
+    function formatTitle (title) {
+      return title.replace(/\d+\.\s/g, '')
     }
 
-    function handleImageOrderChange(imageSet, title) {
+    function handleImageOrderChange (imageSet, title) {
       var serviceName = window.location.pathname.replace('/service/', '').replace('/index.html', '')
       var images = Array.from(imageSet.querySelectorAll('.image')).map(function (image) {
         var note = image.querySelector('.note .note-display')
@@ -49,10 +67,10 @@
         scenarioName: formatTitle(title.innerText)
       }
 
-      fetch('/save-images', {
+      window.fetch('/save-images', {
         method: 'POST',
         body: JSON.stringify(request),
-        headers: new Headers({
+        headers: new window.Headers({
           'Content-Type': 'application/json'
         })
       }).then(function (response) {
@@ -70,19 +88,23 @@
       })
     }
 
-    function addDragDrop() {
-      var imageSetContainers = Array.from(document.querySelectorAll('.image-set-images'))
+    function addDragDrop () {
+      saveImagesPing
+        .then(function (response) {
+          var imageSetContainers = Array.from(document.querySelectorAll('.image-set-images'))
+          var draggableImageSets = window.dragula({
+            containers: imageSetContainers,
+            direction: 'horizontal'
+          })
 
-      var draggableImageSets = dragula({
-        containers: imageSetContainers,
-        direction: 'horizontal'
-      })
-
-      draggableImageSets.on('drop', function (e) {
-        var imageSet = e.parentElement
-        var title = imageSet.parentElement.querySelector('.image-set-title')
-        handleImageOrderChange(imageSet, title)
-      })
+          draggableImageSets.on('drop', function (e) {
+            var imageSet = e.parentElement
+            var title = imageSet.parentElement.querySelector('.image-set-title')
+            handleImageOrderChange(imageSet, title)
+          })
+        }).catch(function (err) {
+          return err
+        })
     }
 
     function scenarioOpened () {
@@ -91,6 +113,7 @@
       closeAll.style.display = 'inline'
       toolBar.style.display = 'block'
       addDragDrop()
+      noteEditButtonVisibility()
     }
 
     function allScenariosClosed () {
