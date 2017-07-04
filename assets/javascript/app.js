@@ -10,7 +10,7 @@
     document.getElementById('content').innerHTML = window.Handlebars.compile(template)(data)
   }
 
-  function noteEditButtonVisibility() {
+  function noteEditButtonVisibility () {
     var noteEditditButton = document.querySelector('.note-edit-button')
 
     window.fetch('/save-note', {
