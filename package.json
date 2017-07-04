@@ -16,9 +16,9 @@
   "scripts": {
     "start": "node server.js",
     "add": "node index.js",
-    "test": "tape test/*.js",
+    "test": "npm run lint && tape test/*.js",
     "test:watch": "nodemon -q --exec 'npm run test' --ignore service/",
-    "lint": "standard --fix"
+    "lint": "standard"
   },
   "standard": {
     "ignore": [
