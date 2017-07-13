@@ -16,9 +16,11 @@
     window.fetch('/save-note', {
       method: 'POST'
     }).then(function (response) {
-      response.json()
-    }).then(function () {
-      noteEditditButton.style.display = 'block'
+      if (response.status === 200) {
+        noteEditditButton.style.display = 'block'
+      } else {
+        noteEditditButton.style.display = 'none'
+      }
     }).catch(function () {
       noteEditditButton.style.display = 'none'
     })
