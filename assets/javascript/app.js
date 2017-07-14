@@ -11,18 +11,24 @@
   }
 
   function noteEditButtonVisibility() {
-    var noteEditditButton = document.querySelector('.note-edit-button')
-
     window.fetch('/save-note', {
       method: 'POST'
     }).then(function (response) {
       if (response.status === 200) {
-        noteEditditButton.style.display = 'block'
+        setNoteEditButtonDisplay('block')
       } else {
-        noteEditditButton.style.display = 'none'
+        setNoteEditButtonDisplay('none')
       }
     }).catch(function () {
-      noteEditditButton.style.display = 'none'
+      setNoteEditButtonDisplay('none')
+    })
+  }
+
+  function setNoteEditButtonDisplay(display) {
+    var noteEditButtons = document.querySelectorAll('.note-edit-button')
+
+    noteEditButtons.forEach(function (button) {
+      button.style.display = display
     })
   }
 
