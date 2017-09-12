@@ -593,6 +593,56 @@ var data = {
       ]
     },
     {
+      "title": "Simple Assessment - Get help",
+      "path": [
+        {
+          "caption": "check income tax last year",
+          "imgref": "images/simple-assessment-get-help/01-check-income-tax-last-year.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "get help",
+          "imgref": "images/simple-assessment-get-help/02-get-help.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "cannot collect from your income",
+          "imgref": "images/simple-assessment-get-help/03-cannot-collect-from-your-income.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "report a problem or change",
+          "imgref": "images/simple-assessment-get-help/04-report-a-problem-or-change.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "payment not showing",
+          "imgref": "images/simple-assessment-get-help/05-payment-not-showing.png",
+          "note": "Notes go here..."
+        }
+      ]
+    },
+    {
+      "title": "Simple Assessment - Part Payment",
+      "path": [
+        {
+          "caption": "check income tax last year",
+          "imgref": "images/simple-assessment-part-payment/01-check-income-tax-last-year.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "choose what to pay",
+          "imgref": "images/simple-assessment-part-payment/02-choose-what-to-pay.png",
+          "note": "Notes go here..."
+        },
+        {
+          "caption": "what you will still owe",
+          "imgref": "images/simple-assessment-part-payment/03-what-you-will-still-owe.png",
+          "note": "Notes go here..."
+        }
+      ]
+    },
+    {
       "title": "Other - No-Rec",
       "path": [
         {
